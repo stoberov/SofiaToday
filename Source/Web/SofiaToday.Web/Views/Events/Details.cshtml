@@ -1,0 +1,24 @@
+﻿@model SofiaToday.Web.ViewModels.Events.EventViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="jumboron">
+    <h3>@Model.Title</h3>
+</div>
+
+<div class="row">
+    <img class="img-responsive" src="@Model.ImageUrl" alt="@Model.Title" />
+</div>
+
+<div class="col-md-12">
+    <span class="glyphicon glyphicon-map-marker"></span>@Model.Location <br />
+    <span class="glyphicon glyphicon-usd"></span>@Model.Price <br />
+    <span class="glyphicon glyphicon-calendar"></span>@Html.DisplayFor(m => m.StartDateTime)
+</div>
+
+<div class="col-md-12">
+    <p>@Model.Description</p>
+</div>

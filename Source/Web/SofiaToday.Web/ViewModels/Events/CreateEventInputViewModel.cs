@@ -1,6 +1,7 @@
 ﻿namespace SofiaToday.Web.ViewModels.Events
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
 
     public class CreateEventInputViewModel
     {
@@ -9,6 +10,10 @@
         public DateTime StartDateTime { get; set; }
 
         public DateTime EndDateTime { get; set; }
+
+        [Required]
+        [DataType(DataType.MultilineText)]
+        public string Description { get; set; }
 
         public string Location { get; set; }
 

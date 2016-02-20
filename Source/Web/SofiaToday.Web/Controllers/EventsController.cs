@@ -14,7 +14,7 @@
             this.events = events;
         }
 
-        public ActionResult ById(int id)
+        public ActionResult Details(int id)
         {
             var singleEvent = this.events.GetEventById(id);
             var viewModel = this.Mapper.Map<EventViewModel>(singleEvent);
@@ -43,6 +43,7 @@
                 StartDateTime = model.StartDateTime,
                 EndDateTime = model.EndDateTime,
                 Location = model.Location,
+                Description = model.Description,
                 Price = model.Price,
                 ImageUrl = model.ImageUrl
             };

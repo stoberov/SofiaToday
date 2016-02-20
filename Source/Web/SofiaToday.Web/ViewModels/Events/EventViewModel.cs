@@ -1,6 +1,7 @@
 ﻿namespace SofiaToday.Web.ViewModels.Events
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
     using AutoMapper;
     using Data.Models;
     using Infrastructure.Mapping;
@@ -17,11 +18,14 @@
 
         public string Location { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public double Price { get; set; }
 
         public string ImageUrl { get; set; }
 
         public string Category { get; set; }
+
+        public string Description { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {
