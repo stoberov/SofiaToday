@@ -49,6 +49,8 @@
 
             this.events.AddNewEvent(newEvent);
 
+            this.TempData["Notification"] = "Event added successfully!";
+
             return this.Redirect("/");
         }
     }

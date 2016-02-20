@@ -21,8 +21,8 @@
                 <ul class="nav navbar-nav">
                     @if (Request.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("My Events", "My", "Events", new { area = string.Empty }, null)</li>
-                        <li>@Html.ActionLink("Create Event", "Create", "Events", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("My Events", "My", "Events", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Create Event", "Create", "Events", new { area = string.Empty }, null)</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -30,6 +30,12 @@
         </div>
     </div>
     <div class="container body-content">
+
+        @if (this.TempData["Notification"] != null)
+        {
+            <div class="alert alert-success">@this.TempData["Notification"]</div>
+        }
+
         @RenderBody()
         <hr />
         <footer>
