@@ -18,6 +18,7 @@
             this.events = events;
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
             var upcomingEvents = this.events.GetUpcomingEvents().To<EventViewModel>().ToList();

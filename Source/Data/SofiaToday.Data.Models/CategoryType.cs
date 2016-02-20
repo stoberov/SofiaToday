@@ -1,6 +1,6 @@
 ﻿namespace SofiaToday.Data.Models
 {
-    public enum Category
+    public enum CategoryType
     {
         Nightlife,
         Concerts,

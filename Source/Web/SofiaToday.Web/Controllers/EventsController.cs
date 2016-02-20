@@ -14,6 +14,7 @@
             this.events = events;
         }
 
+        [HttpGet]
         public ActionResult Details(int id)
         {
             var singleEvent = this.events.GetEventById(id);

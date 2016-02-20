@@ -79,8 +79,8 @@
                 return this.View(model);
             }
 
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
+            // This doesn't count login failures towards account lockout To enable password failures
+            // to trigger account lockout, change to shouldLockout: true
             var result =
                 await
                 this.SignInManager.PasswordSignInAsync(
@@ -92,12 +92,15 @@
             {
                 case SignInStatus.Success:
                     return this.RedirectToLocal(returnUrl);
+
                 case SignInStatus.LockedOut:
                     return this.View("Lockout");
+
                 case SignInStatus.RequiresVerification:
                     return this.RedirectToAction(
                         "SendCode",
                         new { ReturnUrl = returnUrl, model.RememberMe });
+
                 case SignInStatus.Failure:
                 default:
                     this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
@@ -131,10 +134,10 @@
                 return this.View(model);
             }
 
-            // The following code protects for brute force attacks against the two factor codes.
-            // If a user enters incorrect codes for a specified amount of time then the user account
-            // will be locked out for a specified amount of time.
-            // You can configure the account lockout settings in IdentityConfig
+            // The following code protects for brute force attacks against the two factor codes. If
+            // a user enters incorrect codes for a specified amount of time then the user account
+            // will be locked out for a specified amount of time. You can configure the account
+            // lockout settings in IdentityConfig
             var result =
                 await
                 this.SignInManager.TwoFactorSignInAsync(
@@ -146,8 +149,10 @@
             {
                 case SignInStatus.Success:
                     return this.RedirectToLocal(model.ReturnUrl);
+
                 case SignInStatus.LockedOut:
                     return this.View("Lockout");
+
                 case SignInStatus.Failure:
                 default:
                     this.ModelState.AddModelError(string.Empty, "Invalid code.");
@@ -176,11 +181,14 @@
                 {
                     await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                    // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                    // For more information on how to enable account confirmation and password reset
+                    // please visit http://go.microsoft.com/fwlink/?LinkID=320771 Send an email with
+                    // this link string code = await
+                    // UserManager.GenerateEmailConfirmationTokenAsync(user.Id); var callbackUrl =
+                    // Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code },
+                    // protocol: Request.Url.Scheme); await UserManager.SendEmailAsync(user.Id,
+                    // "Confirm your account", "Please confirm your account by clicking <a href=\""
+                    // + callbackUrl + "\">here</a>");
                     return this.RedirectToAction("Index", "Home");
                 }
 
@@ -226,12 +234,14 @@
                     return this.View("ForgotPasswordConfirmation");
                 }
 
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                // For more information on how to enable account confirmation and password reset
+                // please visit http://go.microsoft.com/fwlink/?LinkID=320771 Send an email with
+                // this link string code = await
+                // UserManager.GeneratePasswordResetTokenAsync(user.Id); var callbackUrl =
+                // Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code },
+                // protocol: Request.Url.Scheme); await UserManager.SendEmailAsync(user.Id, "Reset
+                // Password", "Please reset your password by clicking <a href=\"" + callbackUrl +
+                // "\">here</a>"); return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // If we got this far, something failed, redisplay form
@@ -355,10 +365,13 @@
             {
                 case SignInStatus.Success:
                     return this.RedirectToLocal(returnUrl);
+
                 case SignInStatus.LockedOut:
                     return this.View("Lockout");
+
                 case SignInStatus.RequiresVerification:
                     return this.RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
+
                 case SignInStatus.Failure:
                 default:
 

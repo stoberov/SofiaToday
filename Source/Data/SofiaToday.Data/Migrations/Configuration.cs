@@ -65,7 +65,7 @@ Party!In addition to the event we are planning a great party and other surprises
                     Location = "Inter Expo Center",
                     StartDateTime = DateTime.Now.AddDays(5).AddHours(2),
                     EndDateTime = DateTime.Now.AddDays(5).AddHours(6),
-                    Category = Category.Misc,
+                    Category = CategoryType.Misc,
                     Price = 0,
                     ImageUrl = "https://scontent-fra3-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/1933225_765211740279327_6705588417316476162_o.jpg"
                 });
@@ -78,7 +78,7 @@ Party!In addition to the event we are planning a great party and other surprises
                     Location = "Mixtape 5",
                     StartDateTime = DateTime.Now.AddDays(2).AddHours(1),
                     EndDateTime = DateTime.Now.AddDays(2).AddHours(3),
-                    Category = Category.Nightlife,
+                    Category = CategoryType.Nightlife,
                     Price = 10,
                     ImageUrl = "https://scontent-fra3-1.xx.fbcdn.net/hphotos-xal1/t31.0-8/12513665_1065439380153133_6283512421692433897_o.jpg"
                 });
@@ -90,7 +90,7 @@ Party!In addition to the event we are planning a great party and other surprises
                     Location = "BNT 1",
                     StartDateTime = DateTime.Now.AddDays(15).AddHours(12),
                     EndDateTime = DateTime.Now.AddDays(15).AddHours(16),
-                    Category = Category.Cinema,
+                    Category = CategoryType.Cinema,
                     Price = 0,
                     ImageUrl = "http://www.chudesa.net/wp-content/uploads/2013/02/pod_prikritie.jpg"
                 });

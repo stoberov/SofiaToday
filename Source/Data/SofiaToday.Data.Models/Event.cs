@@ -15,7 +15,7 @@
 
         public string Location { get; set; }
 
-        public Category Category { get; set; }
+        public CategoryType Category { get; set; }
 
         public string CreatorId { get; set; }
 
