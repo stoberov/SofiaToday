@@ -49,9 +49,9 @@
             // similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            // app.UseFacebookAuthentication(
-            // appId: "",
-            // appSecret: "");
+            app.UseFacebookAuthentication(
+            appId: "1610787885810301",
+            appSecret: "59edca0319cdfdc8e312f40d2bb3ae4e");
         }
     }
 }

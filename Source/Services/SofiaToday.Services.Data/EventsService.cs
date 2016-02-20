@@ -45,5 +45,10 @@
             this.events.Add(newEvent);
             this.events.Save();
         }
+
+        public IQueryable<Event> GetEventsByCreatorId(string creatorId)
+        {
+            return this.events.All().Where(x => x.CreatorId == creatorId);
+        }
     }
 }

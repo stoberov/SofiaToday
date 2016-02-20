@@ -1,7 +1,10 @@
 ﻿namespace SofiaToday.Web.Controllers
 {
+    using System.Linq;
     using System.Web.Mvc;
     using Data.Models;
+    using Infrastructure.Mapping;
+    using Microsoft.AspNet.Identity;
     using SofiaToday.Services.Data;
     using ViewModels.Events;
 
@@ -40,6 +43,7 @@
 
             var newEvent = new Event
             {
+                CreatorId = this.User.Identity.GetUserId(),
                 Title = model.Title,
                 StartDateTime = model.StartDateTime,
                 EndDateTime = model.EndDateTime,
@@ -54,6 +58,14 @@
             this.TempData["Notification"] = "Event added successfully!";
 
             return this.Redirect("/");
+        }
+
+        [HttpGet]
+        public ActionResult MyEvents()
+        {
+            var myEvents = this.events.GetEventsByCreatorId(this.User.Identity.GetUserId()).To<EventViewModel>().ToList();
+
+            return this.View(myEvents);
         }
     }
 }

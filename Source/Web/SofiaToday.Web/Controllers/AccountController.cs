@@ -91,6 +91,7 @@
             switch (result)
             {
                 case SignInStatus.Success:
+                    this.TempData["Notification"] = "Successful Login!";
                     return this.RedirectToLocal(returnUrl);
 
                 case SignInStatus.LockedOut:
@@ -164,6 +165,7 @@
         [AllowAnonymous]
         public ActionResult Register()
         {
+            this.TempData["Notification"] = "Registration successful!";
             return this.View();
         }
 

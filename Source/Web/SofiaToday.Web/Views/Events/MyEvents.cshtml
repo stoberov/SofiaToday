@@ -1,0 +1,11 @@
+﻿@model IEnumerable<SofiaToday.Web.ViewModels.Events.EventViewModel>
+@{
+    ViewBag.Title = "MyEvents";
+}
+
+<h2>MyEvents</h2>
+
+@foreach (var item in Model)
+{
+    <p>@item.Title</p>
+}

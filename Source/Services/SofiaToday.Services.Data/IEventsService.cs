@@ -14,6 +14,8 @@
 
         Event GetEventById(int id);
 
+        IQueryable<Event> GetEventsByCreatorId(string creatorId);
+
         IQueryable<Event> GetRandomEvents(int count);
 
         void AddNewEvent(Event newEvent);

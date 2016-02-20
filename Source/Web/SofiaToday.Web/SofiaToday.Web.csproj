@@ -204,8 +204,10 @@
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
@@ -308,6 +310,10 @@
     <Content Include="Content\KendoUI\textures\stripe6.png" />
     <Content Include="Content\KendoUI\textures\transparency.png" />
     <Content Include="Content\KendoUI\textures\transtexture.png" />
+    <Content Include="Content\MaterialDesign\bootstrap-material-design.css" />
+    <Content Include="Content\MaterialDesign\bootstrap-material-design.min.css" />
+    <Content Include="Content\MaterialDesign\ripples.css" />
+    <Content Include="Content\MaterialDesign\ripples.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -352,6 +358,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\KendoUI\kendo.all.min.js" />
     <Content Include="Scripts\KendoUI\kendo.aspnetmvc.min.js" />
+    <Content Include="Scripts\MaterialDesign\material.js" />
+    <Content Include="Scripts\MaterialDesign\material.min.js" />
+    <Content Include="Scripts\MaterialDesign\ripples.js" />
+    <Content Include="Scripts\MaterialDesign\ripples.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -390,11 +400,18 @@
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\Events\Create.cshtml" />
     <Content Include="Views\Events\Details.cshtml" />
+    <Content Include="Views\Events\MyEvents.cshtml" />
+    <Content Include="Views\Information\About.cshtml" />
+    <Content Include="Views\Information\Contact.cshtml" />
+    <Content Include="Views\Shared\_BannerPartial.cshtml" />
+    <Content Include="Scripts\MaterialDesign\material.min.js.map" />
+    <Content Include="Scripts\MaterialDesign\ripples.min.js.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Error\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

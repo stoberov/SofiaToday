@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = "Home Page";
 }
+
+@Html.Partial("_BannerPartial")
+
 <h1>Upcoming Events</h1>
 <div class="row">
     @if (Model.UpcomingEvents.Any())
