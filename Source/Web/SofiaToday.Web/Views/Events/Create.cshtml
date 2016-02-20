@@ -1,10 +1,11 @@
 ﻿@model SofiaToday.Web.ViewModels.Events.CreateEventInputViewModel
-
 @{
     ViewBag.Title = "Create";
 }
 
 <h2>Create Event</h2>
+
+
 
 @using (Html.BeginForm()) 
 {
@@ -25,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.StartDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.StartDateTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Kendo().DateTimePicker().Name("StartDateTime").HtmlAttributes(new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.StartDateTime, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -33,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EndDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EndDateTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Kendo().DateTimePicker().Name("EndDateTime").HtmlAttributes(new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EndDateTime, "", new { @class = "text-danger" })
             </div>
         </div>
