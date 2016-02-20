@@ -73,7 +73,7 @@ Party!In addition to the event we are planning a great party and other surprises
                     Title = "Mihaela Fileva, Preyah & Divna LIVE - club *MIXTAPE 5* | 26.02",
                     Description = @"Серията ""тройни"" лайв формати на club *MIXTAPE 5* продължава с пълна сила, този път с участието на Mihaela Fileva, Preyah и Дивна.
 След безупречния успех на предишните ""ladies"" събития сме жадни да чуем още три успешни и талантливи изпълнителки.Този път те са част от лейбъла Monte Music Ltd.и ще излязат за първи път заедно на сцената в голямата зала на ""Mixtape 5"" на 26 февруари 2016 г.",
-                    Location = "Inter Expo Center",
+                    Location = "Mixtape 5",
                     StartDateTime = DateTime.Now.AddDays(2).AddHours(1),
                     EndDateTime = DateTime.Now.AddDays(2).AddHours(3),
                     Category = Category.Nightlife
@@ -83,10 +83,10 @@ Party!In addition to the event we are planning a great party and other surprises
                 {
                     Title = "Премиера , Официално! Под прикритие - Сезон 5",
                     Description = @"The new season starts now!",
-                    Location = "Inter Expo Center",
+                    Location = "BNT 1",
                     StartDateTime = DateTime.Now.AddDays(15).AddHours(12),
                     EndDateTime = DateTime.Now.AddDays(15).AddHours(16),
-                    Category = Category.Misc
+                    Category = Category.Cinema
                 });
 
                 context.SaveChanges();
