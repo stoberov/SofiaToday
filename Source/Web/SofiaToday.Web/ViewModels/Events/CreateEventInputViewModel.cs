@@ -14,9 +14,10 @@
         [Required]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
-
+        
         public string Location { get; set; }
 
+        
         public double Price { get; set; }
 
         public string ImageUrl { get; set; }

@@ -1,22 +1,28 @@
 ﻿@model SofiaToday.Web.ViewModels.Events.EventViewModel
 
-<div class="col-md-4">
+<div class="col-md-4 event-item">
     <a href="/events/details/@Model.Id">
         <img class="img-responsive" src="@Model.ImageUrl" alt="@Model.Title" />
     </a>
     <div class="event-category">@Model.Category</div>
-    <div>
+    <div class="event-summary">
         <a href="/events/details/@Model.Id">
             <h4>@Model.Title</h4>
         </a>
         <p>
-            <span class="glyphicon glyphicon-map-marker"></span> @Model.Location
+            <span class="glyphicon glyphicon-map-marker"></span>@Html.DisplayFor(m => m.Location)
         </p>
         <p>
             <span class="glyphicon glyphicon-calendar"></span> @Html.DisplayFor(m => m.StartDateTime)
         </p>
-        <p>
-            @Html.DisplayFor(m => m.Price, "Price")
-        </p>
+
+        @if (Model.Price == 0)
+        {
+            <p>FREE</p>
+        }
+        else
+        {
+            @Html.DisplayFor(m => m.Price)
+        }
     </div>
 </div>
