@@ -60,6 +60,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="Event.cs" />
     <Compile Include="Joke.cs" />
     <Compile Include="JokeCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

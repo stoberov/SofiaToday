@@ -1,5 +1,6 @@
 ﻿namespace SofiaToday.Data.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -17,6 +18,12 @@
         }
 
         protected override void Seed(ApplicationDbContext context)
+        {
+            SeedAdmin(context);
+            SeedEvents(context);
+        }
+
+        private static void SeedAdmin(ApplicationDbContext context)
         {
             const string AdministratorUserName = "admin@admin.com";
             const string AdministratorPassword = AdministratorUserName;
@@ -37,6 +44,52 @@
 
                 // Assign user to admin role
                 userManager.AddToRole(user.Id, GlobalConstants.AdministratorRoleName);
+            }
+        }
+
+        private static void SeedEvents(ApplicationDbContext context)
+        {
+            if (!context.Events.Any())
+            {
+                context.Events.Add(new Event
+                {
+                    Title = "Bulgaria Web Summit 2016",
+                    Description = @"An event about (almost) everything a modern web person should know.
+Bulgaria Web Summit is an annual conference about the modern web.
+Benefit: Practical lessons which you can immediately apply in your work and thus gain time and money.The attendance fee is actually an investment.An investment in yourselves.
+Community: A balanced mixture of participants and speakers working in programming,
+                    design,
+                    marketing and business development.Find partners,
+                    colleagues or ideas to develop.
+Party!In addition to the event we are planning a great party and other surprises for you.You should treat yourselves to an amazing weekend in Sofia!",
+                    Location = "Inter Expo Center",
+                    StartDateTime = DateTime.Now.AddDays(5).AddHours(2),
+                    EndDateTime = DateTime.Now.AddDays(5).AddHours(6),
+                    Category = Category.Misc
+                });
+
+                context.Events.Add(new Event
+                {
+                    Title = "Mihaela Fileva, Preyah & Divna LIVE - club *MIXTAPE 5* | 26.02",
+                    Description = @"Серията ""тройни"" лайв формати на club *MIXTAPE 5* продължава с пълна сила, този път с участието на Mihaela Fileva, Preyah и Дивна.
+След безупречния успех на предишните ""ladies"" събития сме жадни да чуем още три успешни и талантливи изпълнителки.Този път те са част от лейбъла Monte Music Ltd.и ще излязат за първи път заедно на сцената в голямата зала на ""Mixtape 5"" на 26 февруари 2016 г.",
+                    Location = "Inter Expo Center",
+                    StartDateTime = DateTime.Now.AddDays(2).AddHours(1),
+                    EndDateTime = DateTime.Now.AddDays(2).AddHours(3),
+                    Category = Category.Nightlife
+                });
+
+                context.Events.Add(new Event
+                {
+                    Title = "Премиера , Официално! Под прикритие - Сезон 5",
+                    Description = @"The new season starts now!",
+                    Location = "Inter Expo Center",
+                    StartDateTime = DateTime.Now.AddDays(15).AddHours(12),
+                    EndDateTime = DateTime.Now.AddDays(15).AddHours(16),
+                    Category = Category.Misc
+                });
+
+                context.SaveChanges();
             }
         }
     }
