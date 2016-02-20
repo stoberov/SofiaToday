@@ -1,12 +1,19 @@
 ﻿@model SofiaToday.Web.ViewModels.Events.EventViewModel
 
-<div>
-    <h3>@Model.Title</h3>
-    <span>Start: @Model.StartDateTime</span><br />
-    <span>End: @Model.EndDateTime</span><br />
+<div class="col-md-4">
+    <img class="img-responsive" src="@Model.ImageUrl" alt="@Model.Title" />
+    <div>@Model.Category</div>
+    <div>
+        <h4>@Model.Title</h4>
+        <p>
+            <span class="glyphicon glyphicon-map-marker"></span>@Model.Location <br />
+            <span class="glyphicon glyphicon-calendar"></span>@Html.DisplayFor(m => m.StartDateTime)
+        </p>
+        <p>
+            @Model.Price
+        </p>
+        <p>
 
-    @if (Model.Location != null)
-    {
-        <p>Location: @Model.Location</p>
-    }    
+        </p>
+    </div>
 </div>

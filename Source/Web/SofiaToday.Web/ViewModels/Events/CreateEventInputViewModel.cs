@@ -1,9 +1,8 @@
-﻿namespace SofiaToday.Data.Models
+﻿namespace SofiaToday.Web.ViewModels.Events
 {
     using System;
-    using Common.Models;
 
-    public class Event : BaseModel<int>
+    public class CreateEventInputViewModel
     {
         public string Title { get; set; }
 
@@ -11,15 +10,7 @@
 
         public DateTime EndDateTime { get; set; }
 
-        public string Description { get; set; }
-
         public string Location { get; set; }
-
-        public Category Category { get; set; }
-
-        public string CreatorId { get; set; }
-
-        public virtual ApplicationUser Creator { get; set; }
 
         public double Price { get; set; }
 

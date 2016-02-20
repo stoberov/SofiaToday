@@ -217,6 +217,7 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Events\CreateEventInputViewModel.cs" />
     <Compile Include="ViewModels\Events\EventViewModel.cs" />
     <Compile Include="ViewModels\Events\UpcomingPassedEventsViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
@@ -298,6 +299,8 @@
     <Content Include="Scripts\jquery-2.2.0.min.map" />
     <Content Include="Views\Jokes\ById.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\EventViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Events\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\" />
