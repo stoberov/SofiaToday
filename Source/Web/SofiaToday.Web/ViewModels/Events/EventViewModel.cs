@@ -1,9 +1,10 @@
 ﻿namespace SofiaToday.Web.ViewModels.Events
 {
     using System;
-    using System.Collections.Generic;
+    using Data.Models;
+    using Infrastructure.Mapping;
 
-    public class EventViewModel
+    public class EventViewModel : IMapFrom<Event>
     {
         public int Id { get; set; }
 

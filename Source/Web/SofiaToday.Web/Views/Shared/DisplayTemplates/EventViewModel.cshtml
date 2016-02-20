@@ -1,0 +1,12 @@
+﻿@model SofiaToday.Web.ViewModels.Events.EventViewModel
+
+<div>
+    <h3>@Model.Title</h3>
+    <span>Start: @Model.StartDateTime</span><br />
+    <span>End: @Model.EndDateTime</span><br />
+
+    @if (Model.Location != null)
+    {
+        <p>Location: @Model.Location</p>
+    }    
+</div>

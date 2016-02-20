@@ -1,16 +1,27 @@
-﻿@model SofiaToday.Web.ViewModels.Home.IndexViewModel
+﻿@model SofiaToday.Web.ViewModels.Events.UpcomingPassedEventsViewModel
 @{
     ViewBag.Title = "Home Page";
 }
-<h1>Вицове</h1>
+<h1>Upcoming Events</h1>
 <div class="row">
-    @foreach (var joke in Model.Jokes)
+    @if (Model.UpcomingEvents.Any())
     {
-        <div class="col-md-4">
-            <a href="@joke.Url">
-                @Html.Raw(joke.Content.Replace("\n", "<br />"))
-            </a>
-            <div>@joke.Category</div>
-        </div>
+        @Html.DisplayFor(x => x.UpcomingEvents)
+    }
+    else
+    {
+        <div>No Upcoming Events</div>
+    }
+</div>
+
+<h1>Passed Events</h1>
+<div class="row">
+    @if (Model.PassedEvents.Any())
+    {
+        @Html.DisplayFor(x => x.PassedEvents)
+    }
+    else
+    {
+        <div>No Passed Events</div>
     }
 </div>
