@@ -43,37 +43,5 @@
 
             return this.View(viewModel);
         }
-
-        [HttpGet]
-        public ActionResult Comment()
-        {
-            return this.View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Comment(CommentInputModel model)
-        {
-            if (!this.ModelState.IsValid)
-            {
-                return this.View(model);
-            }
-
-            var comment = new Comment
-            {
-                Content = model.Content,
-                Email = model.Email,
-                Author = model.Author,
-                ArticleId = model.ArticleId
-            };
-
-            this.comments.AddNewComment(comment);
-
-            this.comments.SaveChanges();
-
-            this.TempData["Notification"] = GlobalConstants.CommentAddedSuccess;
-
-            return this.Redirect("/");
-        }
     }
 }
