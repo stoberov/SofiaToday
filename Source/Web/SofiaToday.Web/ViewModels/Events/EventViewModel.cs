@@ -21,11 +21,15 @@
         [DisplayFormat(DataFormatString = "{0:C}")]
         public double Price { get; set; }
 
+        [DataType(DataType.ImageUrl)]
         public string ImageUrl { get; set; }
 
         public string Category { get; set; }
 
         public string Description { get; set; }
+
+        [DataType(DataType.Url)]
+        public string OfficialUrl { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {

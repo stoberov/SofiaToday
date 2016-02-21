@@ -34,5 +34,7 @@
         public virtual ICollection<Tag> Tags { get; set; }
 
         public bool IsFeatured { get; set; }
+
+        public string OfficialUrl { get; set; }
     }
 }

@@ -1,25 +1,27 @@
-﻿@model SofiaToday.Web.ViewModels.Events.EventViewModel
+﻿@model SofiaToday.Web.ViewModels.Events.DetailsViewModel
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h3>@Model.Title</h3>
+<h3>@Model.Event.Title</h3>
 
 <div class="col-md-9">
-    <img class="img-responsive" src="@Model.ImageUrl" alt="@Model.Title" />
+    <img class="img-responsive" src="@Model.Event.ImageUrl" alt="@Model.Event.Title" />
     <div class="col-md-12 well">
-        <span class="glyphicon glyphicon-map-marker"></span>@Model.Location <br />
-        <span class="glyphicon glyphicon-usd"></span>@Model.Price <br />
-        <span class="glyphicon glyphicon-calendar"></span>@Html.DisplayFor(m => m.StartDateTime)
+        <span class="glyphicon glyphicon-map-marker"></span>@Model.Event.Location <br />
+        <span class="glyphicon glyphicon-usd"></span>@Model.Event.Price <br />
+        <span class="glyphicon glyphicon-calendar"></span>@Html.DisplayFor(m => m.Event.StartDateTime)
     </div>
 
     <div class="col-md-12">
-        <p>@Model.Description</p>
+        <p>@Model.Event.Description</p>
+
+
     </div>
 </div>
 <div class="col-md-3">
-    Sidebar
+    @Html.Partial("_MoreDetailsPartial")
+    <hr />
+    @Html.Partial("_RelatedEventsPartial")
 </div>
-
-@Html.ActionLink("Going!", "AddToCalendar", new { Id = Model.Id })

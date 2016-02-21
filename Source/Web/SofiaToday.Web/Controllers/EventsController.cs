@@ -29,7 +29,13 @@
         public ActionResult Details(int id)
         {
             var singleEvent = this.events.GetEventById(id);
-            var viewModel = this.Mapper.Map<EventViewModel>(singleEvent);
+            var relatedEvents = this.events.GetRandomEvents(2);
+
+            var viewModel = new DetailsViewModel
+            {
+                Event = this.Mapper.Map<EventViewModel>(singleEvent),
+                RelatedEvents = relatedEvents.To<EventViewModel>().ToList()
+            };
 
             return this.View(viewModel);
         }

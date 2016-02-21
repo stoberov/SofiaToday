@@ -55,5 +55,10 @@
         {
             return this.events.All().Where(x => x.IsFeatured);
         }
+
+        public void SaveChanges()
+        {
+            this.events.Save();
+        }
     }
 }

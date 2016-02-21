@@ -23,7 +23,7 @@
         {
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/bootstrap.min.css", "~/Content/site.css"));
             bundles.Add(new StyleBundle("~/Content/material").Include("~/Content/MaterialDesign/bootstrap-material-design.css", "~/Content/MaterialDesign/ripples.css"));
-            bundles.Add(new StyleBundle("~/Content/kendo").Include("~/Content/KendoUI/kendo.common-bootstrap.min.css", "~/Content/KendoUI/kendo.bootstrap.min.css"));
+            bundles.Add(new StyleBundle("~/Content/kendo").Include("~/Content/KendoUI/kendo.common-material.min.css", "~/Content/KendoUI/kendo.material.min.css"));
         }
     }
 }

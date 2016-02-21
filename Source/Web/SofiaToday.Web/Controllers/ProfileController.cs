@@ -22,7 +22,7 @@
         }
 
         [HttpGet]
-        public ActionResult MyEvents()
+        public ActionResult Calendar()
         {
             var myEvents = this.events.GetEventsByCreatorId(this.User.Identity.GetUserId()).To<EventViewModel>().ToList();
 

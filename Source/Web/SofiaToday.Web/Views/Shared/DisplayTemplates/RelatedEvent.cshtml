@@ -1,0 +1,13 @@
+﻿@model IEnumerable<SofiaToday.Web.ViewModels.Events.EventViewModel>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-12">
+        <a href="/events/details/@item.Id">
+            <img class="img-responsive" src="@item.ImageUrl" alt="@item.Title" />
+        </a>
+        <a href="/events/details/@item.Id">
+            <h4>@item.Title</h4>
+        </a>
+    </div>
+}

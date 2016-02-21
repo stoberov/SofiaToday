@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "My Events";
+}
+
+@(Html.Kendo().Grid<SofiaToday.Web.ViewModels.Events.EventViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Title);
+          columns.Bound(c => c.ImageUrl);
+          columns.Bound(c => c.StartDateTime);
+          columns.Bound(c => c.EndDateTime);
+          columns.Bound(c => c.Location);
+          columns.Bound(c => c.Price);
+          columns.Bound(c => c.Category);
+          columns.Command(command => { command.Edit();}).Width(180);
+      })
+      .ColumnMenu()
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Sortable(sortable =>
+      {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("MyEvents_Read", "MyEvents"))
+          .Update(update => update.Action("MyEvents_Update", "MyEvents"))
+      )
+)
