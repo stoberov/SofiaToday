@@ -1,6 +1,7 @@
 ﻿namespace SofiaToday.Web.ViewModels.Articles
 {
     using System;
+    using System.Collections.Generic;
     using AutoMapper;
     using Data.Models;
     using Infrastructure.Mapping;
@@ -18,6 +19,8 @@
         public string Author { get; set; }
 
         public DateTime CreatedOn { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {

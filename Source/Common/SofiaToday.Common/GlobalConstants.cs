@@ -8,5 +8,7 @@
         public const string LogOutSuccess = "Successful Logout!";
         public const string LogInSuccess = "Successful Login!";
         public const string RegisterSuccess = "Registration successful!";
+
+        public const string CommentAddedSuccess = "Thank you for your comment!";
     }
 }

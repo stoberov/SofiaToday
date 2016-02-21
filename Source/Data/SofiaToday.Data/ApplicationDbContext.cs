@@ -21,6 +21,8 @@
 
         public IDbSet<Article> Articles { get; set; }
 
+        public IDbSet<Comment> Comments { get; set; }
+
         public IDbSet<Tag> Tags { get; set; }
 
         public static ApplicationDbContext Create()

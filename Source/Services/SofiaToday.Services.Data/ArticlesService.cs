@@ -9,10 +9,12 @@
     public class ArticlesService : IArticlesService
     {
         IDbRepository<Article> articles;
+        IDbRepository<Comment> comments;
 
-        public ArticlesService(IDbRepository<Article> articles)
+        public ArticlesService(IDbRepository<Article> articles, IDbRepository<Comment> comments)
         {
             this.articles = articles;
+            this.comments = comments;
         }
 
         public IQueryable<Article> GetAll()

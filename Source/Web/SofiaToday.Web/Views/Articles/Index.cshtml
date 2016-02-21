@@ -20,28 +20,27 @@
                     <div class="row">
                         <div class="col-md-12 post-header-line">
                             <span class="glyphicon glyphicon-user"></span>by <a href="#">@article.Author</a> | <span class="glyphicon glyphicon-calendar">
-                            </span>@article.CreatedOn | <span class="glyphicon glyphicon-comment"></span><a href="#">
-                                3 Comments
-                            </a> | <i class="icon-share"></i><a href="#">39 Shares</a> | <span class="glyphicon glyphicon-tags"></span>
-                        </div>
+                            </span>@article.CreatedOn | <span class="glyphicon glyphicon-comment"></span>
+                            <a href="#">@article.Comments.Count Comments</a>
                     </div>
-                    <div class="row post-content">
-                        <div class="col-md-3">
-                            <a href="articles/details/@article.Id">
-                                <img src="@article.ImageUrl" alt="@article.Title" class="img-responsive">
-                            </a>
-                        </div>
-                        <div class="col-md-9">
-                            <p>
-                                Short paragraph
-                            </p>
-                            <p>
-                                <a class="btn btn-read-more" href="articles/details/@article.Id">Read more</a>
-                            </p>
-                        </div>
+                </div>
+                <div class="row post-content">
+                    <div class="col-md-3">
+                        <a href="articles/details/@article.Id">
+                            <img src="@article.ImageUrl" alt="@article.Title" class="img-responsive">
+                        </a>
+                    </div>
+                    <div class="col-md-9">
+                        <p>
+                            Short paragraph
+                        </p>
+                        <p>
+                            <a class="btn btn-read-more" href="articles/details/@article.Id">Read more</a>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
         }
     </div>
     <div class="col-md-3">
