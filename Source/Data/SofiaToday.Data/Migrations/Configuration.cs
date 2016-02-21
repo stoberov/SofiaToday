@@ -21,6 +21,7 @@
         {
             SeedAdmin(context);
             SeedEvents(context);
+            SeedArticles(context);
         }
 
         private static void SeedAdmin(ApplicationDbContext context)
@@ -44,6 +45,42 @@
 
                 // Assign user to admin role
                 userManager.AddToRole(user.Id, GlobalConstants.AdministratorRoleName);
+            }
+        }
+
+        private static void SeedArticles(ApplicationDbContext context)
+        {
+            if (!context.Articles.Any())
+            {
+                context.Articles.Add(new Article
+                {
+                    Title = "What to do this weekend",
+                    Content = "This is amazing!",
+                    ImageUrl = "http://www.accessmasterstour.com/uploads/tx_templavoila/Sofia_01.jpg"
+                });
+
+                context.Articles.Add(new Article
+                {
+                    Title = "Don't miss on Friday",
+                    Content = "The Return of the one and only",
+                    ImageUrl = "http://www.mybulgaria.info/mydeal/images/property/146cf_sofia.jpg"
+                });
+
+                context.Articles.Add(new Article
+                {
+                    Title = "Best of Cinema - Spring 2016",
+                    Content = "Marvel on the rise.",
+                    ImageUrl = "http://media-cdn.tripadvisor.com/media/photo-s/01/b8/50/7e/sofia.jpg"
+                });
+
+                context.Articles.Add(new Article
+                {
+                    Title = "It's March - don't waste it!",
+                    Content = "Our editor's pick of what to do this month.",
+                    ImageUrl = "http://comoahorrardinero.com/wp-content/uploads/2013/11/sofia.jpg"
+                });
+
+                context.SaveChanges();
             }
         }
 

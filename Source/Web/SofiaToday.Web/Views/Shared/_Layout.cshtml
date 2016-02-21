@@ -33,6 +33,7 @@
                     @if (Request.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("All Events", "Index", "Events", new { area = string.Empty }, null)</li>
+                        <li>@Html.ActionLink("All Articles", "Index", "Articles", new { area = string.Empty }, null)</li>
                         <li>@Html.ActionLink("My Events", "Index", "MyEvents", new { area = string.Empty }, null)</li>
                         <li>@Html.ActionLink("Create Event", "Create", "Events", new { area = string.Empty }, null)</li>
                     }

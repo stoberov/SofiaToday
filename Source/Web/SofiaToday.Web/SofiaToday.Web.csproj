@@ -203,6 +203,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -224,6 +225,8 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticleViewModel.cs" />
+    <Compile Include="ViewModels\Articles\DetailsViewModel.cs" />
     <Compile Include="ViewModels\EventInputModel.cs" />
     <Compile Include="ViewModels\Events\CreateEventInputViewModel.cs" />
     <Compile Include="ViewModels\Events\DetailsViewModel.cs" />
@@ -433,6 +436,8 @@
     <Content Include="Views\Shared\_MoreDetailsPartial.cshtml" />
     <Content Include="Views\Shared\_DailyEventsPartial.cshtml" />
     <Content Include="Views\Shared\_FeaturedEventsPartial.cshtml" />
+    <Content Include="Views\Articles\Index.cshtml" />
+    <Content Include="Views\Articles\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\" />

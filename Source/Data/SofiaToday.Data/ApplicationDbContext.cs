@@ -19,6 +19,8 @@
 
         public IDbSet<Event> Events { get; set; }
 
+        public IDbSet<Article> Articles { get; set; }
+
         public IDbSet<Tag> Tags { get; set; }
 
         public static ApplicationDbContext Create()

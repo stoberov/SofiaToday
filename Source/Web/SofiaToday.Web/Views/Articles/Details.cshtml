@@ -1,0 +1,39 @@
+﻿@model SofiaToday.Web.ViewModels.Articles.DetailsViewModel
+
+@{
+    ViewBag.Title = "Article Details";
+}
+
+<div class="col-md-9">
+    <h1>@Model.Article.Title</h1>
+    <p class="lead">
+        <i class="glyphicon glyphicon-user" ></i> by <a href="">@Model.Article.Author</a>
+    </p>
+    <hr>
+    <p><i class="glyphicon glyphicon-calendar"></i> Posted on @Model.Article.CreatedOn</p>
+    <hr>
+    <img src="@Model.Article.ImageUrl" class="img-responsive">
+    <hr>
+    <p class="lead">@Model.Article.Content</p>
+    <br>
+
+    <!-- the comment box -->
+    <div class="well">
+        <h4><i class="glyphicon glyphicon-comment"></i> Leave a Comment:</h4>
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-raised"><i class="glyphicon glyphicon-send"></i> Submit</button>
+        </form>
+    </div>
+
+    <hr>
+
+    <!-- the comments -->
+    <h3>
+        <i class="glyphicon glyphicon-comment"></i> User One says:
+        <small> 9:41 PM on August 24, 2014</small>
+    </h3>
+    <p>Excellent post! Thank You the great article, it was useful!</p>
+</div>
