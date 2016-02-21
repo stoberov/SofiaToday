@@ -1,9 +1,22 @@
-﻿@model SofiaToday.Web.ViewModels.Events.UpcomingPassedEventsViewModel
+﻿@model SofiaToday.Web.ViewModels.Home.IndexViewModel
 @{
     ViewBag.Title = "Home Page";
 }
 
 @Html.Partial("_BannerPartial")
+
+<h1>Featured Events</h1>
+<hr />
+<div class="row">
+    @if (Model.FeaturedEvents.Any())
+    {
+        @Html.DisplayFor(x => x.FeaturedEvents)
+    }
+    else
+    {
+        <div>No Featured Events</div>
+    }
+</div>
 
 <h1>Upcoming Events</h1>
 <div class="row">
@@ -14,17 +27,5 @@
     else
     {
         <div>No Upcoming Events</div>
-    }
-</div>
-
-<h1>Passed Events</h1>
-<div class="row">
-    @if (Model.PassedEvents.Any())
-    {
-        @Html.DisplayFor(x => x.PassedEvents)
-    }
-    else
-    {
-        <div>No Passed Events</div>
     }
 </div>

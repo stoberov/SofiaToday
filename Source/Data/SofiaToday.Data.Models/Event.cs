@@ -32,5 +32,7 @@
         public string ImageUrl { get; set; }
 
         public virtual ICollection<Tag> Tags { get; set; }
+
+        public bool IsFeatured { get; set; }
     }
 }

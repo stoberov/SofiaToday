@@ -12,6 +12,8 @@
 
         IQueryable<Event> GetPassedEvents();
 
+        IQueryable<Event> GetFeaturedEvents();
+
         Event GetEventById(int id);
 
         IQueryable<Event> GetEventsByCreatorId(string creatorId);

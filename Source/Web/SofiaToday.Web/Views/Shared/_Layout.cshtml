@@ -10,11 +10,10 @@
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
 
     @Styles.Render("~/Content/css")
-    @*@Styles.Render("~/Content/material")*@
+    @Styles.Render("~/Content/material")
     @Styles.Render("~/Content/kendo")
 
     @Scripts.Render("~/bundles/jquery")
-    @*@Scripts.Render("~/bundles/material")*@
     @Scripts.Render("~/bundles/kendo")
     
 </head>
@@ -108,12 +107,13 @@
     </footer>
 
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/material")
     @RenderSection("scripts", required: false)
 
-    @*<script>
+    <script>
         (function () {
             $.material.init();
         })();
-    </script>*@
+    </script>
 </body>
 </html>

@@ -22,12 +22,12 @@
         public ActionResult Index()
         {
             var upcomingEvents = this.events.GetUpcomingEvents().To<EventViewModel>().ToList();
-            var passedEvents = this.events.GetPassedEvents().To<EventViewModel>().ToList();
+            var featuredEvents = this.events.GetFeaturedEvents().To<EventViewModel>().ToList();
 
-            var viewModel = new UpcomingPassedEventsViewModel
+            var viewModel = new IndexViewModel
             {
-                UpcomingEvents = upcomingEvents,
-                PassedEvents = passedEvents
+                FeaturedEvents = featuredEvents,
+                UpcomingEvents = upcomingEvents
             };
 
             return this.View(viewModel);

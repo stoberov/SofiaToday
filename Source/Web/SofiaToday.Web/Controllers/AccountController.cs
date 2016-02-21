@@ -4,7 +4,7 @@
     using System.Threading.Tasks;
     using System.Web;
     using System.Web.Mvc;
-
+    using Common;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Microsoft.Owin.Security;
@@ -91,7 +91,7 @@
             switch (result)
             {
                 case SignInStatus.Success:
-                    this.TempData["Notification"] = "Successful Login!";
+                    this.TempData["Notification"] = GlobalConstants.LogInSuccess;
                     return this.RedirectToLocal(returnUrl);
 
                 case SignInStatus.LockedOut:
@@ -165,7 +165,6 @@
         [AllowAnonymous]
         public ActionResult Register()
         {
-            this.TempData["Notification"] = "Registration successful!";
             return this.View();
         }
 
@@ -177,11 +176,13 @@
         {
             if (this.ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, IsCompany = model.IsCompany };
                 var result = await this.UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+                    this.TempData["Notification"] = GlobalConstants.RegisterSuccess;
 
                     // For more information on how to enable account confirmation and password reset
                     // please visit http://go.microsoft.com/fwlink/?LinkID=320771 Send an email with
@@ -433,6 +434,7 @@
         public ActionResult LogOff()
         {
             this.AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            this.TempData["Notification"] = GlobalConstants.LogOutSuccess;
             return this.RedirectToAction("Index", "Home");
         }
 

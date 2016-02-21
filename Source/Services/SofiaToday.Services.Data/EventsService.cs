@@ -50,5 +50,10 @@
         {
             return this.events.All().Where(x => x.CreatorId == creatorId);
         }
+
+        public IQueryable<Event> GetFeaturedEvents()
+        {
+            return this.events.All().Where(x => x.IsFeatured);
+        }
     }
 }
