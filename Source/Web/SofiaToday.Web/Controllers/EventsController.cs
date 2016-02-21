@@ -18,6 +18,14 @@
         }
 
         [HttpGet]
+        public ActionResult Index()
+        {
+            var upcomingEvents = this.events.GetUpcomingEvents().To<EventViewModel>().ToList();
+
+            return this.View(upcomingEvents);
+        }
+
+        [HttpGet]
         public ActionResult Details(int id)
         {
             var singleEvent = this.events.GetEventById(id);
@@ -58,14 +66,6 @@
             this.TempData["Notification"] = "Event added successfully!";
 
             return this.Redirect("/");
-        }
-
-        [HttpGet]
-        public ActionResult MyEvents()
-        {
-            var myEvents = this.events.GetEventsByCreatorId(this.User.Identity.GetUserId()).To<EventViewModel>().ToList();
-
-            return this.View(myEvents);
         }
     }
 }

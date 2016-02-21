@@ -33,7 +33,7 @@
                 <ul class="nav navbar-nav">
                     @if (Request.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("My Events", "MyEvents", "Events", new { area = string.Empty }, null)</li>
+                        <li>@Html.ActionLink("My Events", "MyEvents", "Profile", new { area = string.Empty }, null)</li>
                         <li>@Html.ActionLink("Create Event", "Create", "Events", new { area = string.Empty }, null)</li>
                     }
                 </ul>

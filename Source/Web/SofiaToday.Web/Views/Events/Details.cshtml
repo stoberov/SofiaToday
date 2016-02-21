@@ -4,21 +4,22 @@
     ViewBag.Title = "Details";
 }
 
+<h3>@Model.Title</h3>
 
-<div class="jumboron">
-    <h3>@Model.Title</h3>
-</div>
-
-<div class="row">
+<div class="col-md-9">
     <img class="img-responsive" src="@Model.ImageUrl" alt="@Model.Title" />
+    <div class="col-md-12 well">
+        <span class="glyphicon glyphicon-map-marker"></span>@Model.Location <br />
+        <span class="glyphicon glyphicon-usd"></span>@Model.Price <br />
+        <span class="glyphicon glyphicon-calendar"></span>@Html.DisplayFor(m => m.StartDateTime)
+    </div>
+
+    <div class="col-md-12">
+        <p>@Model.Description</p>
+    </div>
+</div>
+<div class="col-md-3">
+    Sidebar
 </div>
 
-<div class="col-md-12">
-    <span class="glyphicon glyphicon-map-marker"></span>@Model.Location <br />
-    <span class="glyphicon glyphicon-usd"></span>@Model.Price <br />
-    <span class="glyphicon glyphicon-calendar"></span>@Html.DisplayFor(m => m.StartDateTime)
-</div>
-
-<div class="col-md-12">
-    <p>@Model.Description</p>
-</div>
+@Html.ActionLink("Going!", "AddToCalendar", new { Id = Model.Id })

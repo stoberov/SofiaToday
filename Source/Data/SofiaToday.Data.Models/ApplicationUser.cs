@@ -1,5 +1,6 @@
 ﻿namespace SofiaToday.Data.Models
 {
+    using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
 
