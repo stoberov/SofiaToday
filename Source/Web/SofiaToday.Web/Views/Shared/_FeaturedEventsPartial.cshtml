@@ -1,0 +1,16 @@
+﻿@model SofiaToday.Web.ViewModels.Home.IndexViewModel
+
+<section id="featured-events">
+    <h1>Featured Events</h1>
+    <hr />
+    <div class="row">
+        @if (Model.FeaturedEvents.Any())
+        {
+            @Html.DisplayFor(x => x.FeaturedEvents)
+        }
+        else
+        {
+            <div>No Featured Events</div>
+        }
+    </div>
+</section>

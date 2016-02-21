@@ -73,5 +73,11 @@
 
             return this.Redirect("/");
         }
+
+        public ActionResult All()
+        {
+
+            return this.View();
+        }
     }
 }

@@ -8,5 +8,7 @@
         public IEnumerable<EventViewModel> FeaturedEvents { get; set; }
 
         public IEnumerable<EventViewModel> UpcomingEvents { get; set; }
+
+        public IEnumerable<EventViewModel> DailyEvents { get; set; }
     }
 }

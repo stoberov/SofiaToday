@@ -5,27 +5,6 @@
 
 @Html.Partial("_BannerPartial")
 
-<h1>Featured Events</h1>
-<hr />
-<div class="row">
-    @if (Model.FeaturedEvents.Any())
-    {
-        @Html.DisplayFor(x => x.FeaturedEvents)
-    }
-    else
-    {
-        <div>No Featured Events</div>
-    }
-</div>
+@Html.Partial("_FeaturedEventsPartial")
 
-<h1>Upcoming Events</h1>
-<div class="row">
-    @if (Model.UpcomingEvents.Any())
-    {
-        @Html.DisplayFor(x => x.UpcomingEvents)
-    }
-    else
-    {
-        <div>No Upcoming Events</div>
-    }
-</div>
+@Html.Partial("_DailyEventsPartial")

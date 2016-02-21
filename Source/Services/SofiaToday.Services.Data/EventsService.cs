@@ -60,5 +60,17 @@
         {
             this.events.Save();
         }
+
+        public IQueryable<Event> GetDailyEvents(DateTime date)
+        {
+            var day = date.Day;
+            var month = date.Month;
+            var year = date.Year;
+
+            return this.events.All().Where(x =>
+            x.StartDateTime.Day == day &&
+            x.StartDateTime.Month == month &&
+            x.StartDateTime.Year == year);
+        }
     }
 }

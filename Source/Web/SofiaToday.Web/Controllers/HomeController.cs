@@ -1,5 +1,6 @@
 ﻿namespace SofiaToday.Web.Controllers
 {
+    using System;
     using System.Linq;
     using System.Web.Mvc;
 
@@ -23,11 +24,13 @@
         {
             var upcomingEvents = this.events.GetUpcomingEvents().To<EventViewModel>().ToList();
             var featuredEvents = this.events.GetFeaturedEvents().To<EventViewModel>().ToList();
+            var dailyEvents = this.events.GetDailyEvents(DateTime.UtcNow).To<EventViewModel>().ToList();
 
             var viewModel = new IndexViewModel
             {
                 FeaturedEvents = featuredEvents,
-                UpcomingEvents = upcomingEvents
+                UpcomingEvents = upcomingEvents,
+                DailyEvents = dailyEvents
             };
 
             return this.View(viewModel);

@@ -431,6 +431,8 @@
     <Content Include="Views\Shared\DisplayTemplates\RelatedEvent.cshtml" />
     <Content Include="Views\Profile\Calendar.cshtml" />
     <Content Include="Views\Shared\_MoreDetailsPartial.cshtml" />
+    <Content Include="Views\Shared\_DailyEventsPartial.cshtml" />
+    <Content Include="Views\Shared\_FeaturedEventsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\" />

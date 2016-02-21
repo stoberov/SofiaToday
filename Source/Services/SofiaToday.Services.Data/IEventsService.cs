@@ -1,5 +1,6 @@
 ﻿namespace SofiaToday.Services.Data
 {
+    using System;
     using System.Linq;
 
     using SofiaToday.Data.Models;
@@ -13,6 +14,8 @@
         IQueryable<Event> GetPassedEvents();
 
         IQueryable<Event> GetFeaturedEvents();
+
+        IQueryable<Event> GetDailyEvents(DateTime date);
 
         Event GetEventById(int id);
 
