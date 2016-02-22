@@ -444,6 +444,7 @@
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Location.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Description.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\" />

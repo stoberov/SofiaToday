@@ -2,6 +2,7 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public class CreateEventInputViewModel
     {
@@ -11,8 +12,8 @@
 
         public DateTime EndDateTime { get; set; }
 
-        [Required]
-        [DataType(DataType.MultilineText)]
+        [AllowHtml]
+        [UIHint("Description")]
         public string Description { get; set; }
 
         public string Location { get; set; }
