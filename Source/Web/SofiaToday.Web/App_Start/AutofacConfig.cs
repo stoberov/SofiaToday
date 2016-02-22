@@ -11,9 +11,6 @@
 
     using Data;
     using Data.Common;
-    using Data.Models;
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using Services.Data;
     using Services.Web;
 

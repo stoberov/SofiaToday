@@ -86,7 +86,9 @@
                 Location = model.Location,
                 Description = model.Description,
                 Price = model.Price,
-                ImageUrl = model.ImageUrl
+                ImageUrl = model.ImageUrl,
+                OfficialUrl = model.OfficialUrl,
+                Category = model.Category
             };
 
             this.events.AddNewEvent(newEvent);
