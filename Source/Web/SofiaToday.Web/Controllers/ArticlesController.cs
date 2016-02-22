@@ -1,5 +1,6 @@
 ﻿namespace SofiaToday.Web.Controllers
 {
+    using System;
     using System.Linq;
     using System.Web.Mvc;
     using Common;
@@ -11,8 +12,9 @@
 
     public class ArticlesController : BaseController
     {
-        private readonly IArticlesService articles;
+        private const int ItemsPerPage = 6;
 
+        private readonly IArticlesService articles;
         private readonly ICommentsService comments;
 
         public ArticlesController(IArticlesService articles, ICommentsService comments)
@@ -22,13 +24,27 @@
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var allArticles = this.articles.GetAll().To<ArticleViewModel>().ToList();
+            var currentPage = page;
+            var allItemsCount = this.articles.GetAll().Count();
+            var totalPages = (int)Math.Ceiling(allItemsCount / (decimal)ItemsPerPage);
+            var itemsToSkip = (currentPage - 1) * ItemsPerPage;
+
+            var allArticles = this.articles
+                .GetAll()
+                .OrderBy(x => x.CreatedOn)
+                .ThenBy(x => x.Id)
+                .Skip(itemsToSkip)
+                .Take(ItemsPerPage)
+                .To<ArticleViewModel>()
+                .ToList();
 
             var viewModel = new AllArticlesViewModel
             {
-                AllArticles = allArticles
+                AllArticles = allArticles,
+                TotalPages = totalPages,
+                CurrentPage = currentPage
             };
 
             return this.View(viewModel);
