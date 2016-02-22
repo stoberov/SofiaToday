@@ -9,13 +9,8 @@
         <a href="/events/details/@Model.Id">
             <h4>@Model.Title</h4>
         </a>
-        <p>
-            <span class="glyphicon glyphicon-map-marker"></span>@Html.DisplayFor(m => m.Location)
-        </p>
-        <p>
-            <span class="glyphicon glyphicon-calendar"></span> @Html.DisplayFor(m => m.StartDateTime)
-        </p>
-
-        @Html.DisplayFor(m => m.Price)
+        <p>@Html.DisplayFor(m => m.Location)</p>
+        <p>@Html.DisplayFor(m => m.StartDateTime)</p>
+        <p>@Html.DisplayFor(m => m.Price)</p>
     </div>
 </div>

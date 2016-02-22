@@ -15,7 +15,8 @@
         public DateTime StartDateTime { get; set; }
 
         public DateTime EndDateTime { get; set; }
-       
+
+        [UIHint("Location")]
         public string Location { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:C}")]

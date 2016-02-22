@@ -1,14 +1,12 @@
 ﻿@model Decimal?
 
+<span class="glyphicon glyphicon-usd"></span>
+
 @if (Model.Value == 0)
 {
     <span>FREE</span>
 }
-else if ((Model.Value % 1) == 0)
-{
-    <span>@Model.Value.ToString("C0")</span>
-}
 else
 {
-    <span>@Model.Value.ToString("C2")</span>
+    <span>@Model.Value</span>
 }

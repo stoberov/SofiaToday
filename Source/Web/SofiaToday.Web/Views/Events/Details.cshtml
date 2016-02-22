@@ -9,17 +9,16 @@
 <div class="col-md-9">
     <img class="img-responsive" src="@Model.Event.ImageUrl" alt="@Model.Event.Title" />
     <div class="col-md-12 well">
-        <span class="glyphicon glyphicon-map-marker"></span>@Model.Event.Location <br />
-        <span class="glyphicon glyphicon-usd"></span>@Model.Event.Price <br />
-        <span class="glyphicon glyphicon-calendar"></span>@Html.DisplayFor(m => m.Event.StartDateTime)
+        @Html.DisplayFor(m => m.Event.Location)<br />
+        @Html.DisplayFor(m => m.Event.Price)<br />
+        @Html.DisplayFor(m => m.Event.StartDateTime)
     </div>
 
     <div class="col-md-12">
         <p>@Model.Event.Description</p>
-
-
     </div>
 </div>
+
 <div class="col-md-3">
     @Html.Partial("_MoreDetailsPartial")
     <hr />
