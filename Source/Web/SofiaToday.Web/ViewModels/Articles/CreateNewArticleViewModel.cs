@@ -7,8 +7,10 @@
 
     public class CreateNewArticleViewModel : IMapFrom<Article>
     {
+        [Required]
         public string Title { get; set; }
 
+        [Required]
         public string Summary { get; set; }
 
         [AllowHtml]

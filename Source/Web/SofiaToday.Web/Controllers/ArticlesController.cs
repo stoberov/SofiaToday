@@ -3,7 +3,6 @@
     using System;
     using System.Linq;
     using System.Web.Mvc;
-    using Common;
     using Data.Models;
     using Infrastructure.Mapping;
     using Microsoft.AspNet.Identity;
@@ -95,7 +94,6 @@
             this.TempData["Notification"] = "Article added successfully!";
 
             return this.Redirect("/");
-
         }
     }
 }

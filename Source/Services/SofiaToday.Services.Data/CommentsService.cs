@@ -8,7 +8,7 @@
 
     public class CommentsService : ICommentsService
     {
-        IDbRepository<Comment> comments;
+        private readonly IDbRepository<Comment> comments;
 
         public CommentsService(IDbRepository<Comment> comments)
         {

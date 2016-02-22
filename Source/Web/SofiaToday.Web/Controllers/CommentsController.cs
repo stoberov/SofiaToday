@@ -5,7 +5,7 @@
     using Data.Models;
     using Services.Data;
     using ViewModels.Articles;
-    using ViewModels.Comments;
+
     public class CommentsController : BaseController
     {
         private readonly ICommentsService comments;

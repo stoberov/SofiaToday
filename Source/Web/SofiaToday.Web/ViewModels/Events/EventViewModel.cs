@@ -12,8 +12,10 @@
 
         public string Title { get; set; }
 
+        [Display(Name = "Start Date")]
         public DateTime StartDateTime { get; set; }
 
+        [Display(Name = "End Date")]
         public DateTime EndDateTime { get; set; }
 
         [UIHint("Location")]
@@ -26,7 +28,7 @@
         public string ImageUrl { get; set; }
 
         public string Category { get; set; }
-        
+
         public string Description { get; set; }
 
         [DataType(DataType.Url)]

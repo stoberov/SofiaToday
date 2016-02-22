@@ -11,9 +11,9 @@
     [TestFixture]
     public class JokesControllerTests
     {
-        //[Test]
-        //public void ByIdShouldWorkCorrectly()
-        //{
+        // [Test]
+        // public void ByIdShouldWorkCorrectly()
+        // {
         //    var autoMapperConfig = new AutoMapperConfig();
         //    autoMapperConfig.Execute(typeof(EventsController).Assembly);
         //    const string JokeContent = "SomeContent";
@@ -28,6 +28,6 @@
         //                {
         //                    Assert.AreEqual(JokeContent, viewModel.Content);
         //                }).AndNoModelErrors();
-        //}
+        // }
     }
 }

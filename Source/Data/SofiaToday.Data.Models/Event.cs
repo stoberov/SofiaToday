@@ -7,17 +7,17 @@
 
     public class Event : BaseModel<int>
     {
-        public Event()
-        {
-            this.Tags = new HashSet<Tag>();
-        }
-
+        [Required]
         public string Title { get; set; }
 
+        [Required]
         public DateTime StartDateTime { get; set; }
 
+        [Required]
+        [Display(Name = "End Date")]
         public DateTime EndDateTime { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
         public string Location { get; set; }
@@ -32,10 +32,9 @@
 
         public string ImageUrl { get; set; }
 
-        public virtual ICollection<Tag> Tags { get; set; }
-
         public bool IsFeatured { get; set; }
 
+        [Display(Name = "Event website")]
         public string OfficialUrl { get; set; }
     }
 }

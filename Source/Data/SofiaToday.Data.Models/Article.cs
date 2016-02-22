@@ -1,6 +1,7 @@
 ﻿namespace SofiaToday.Data.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using Common.Models;
 
     public class Article : BaseModel<int>
@@ -10,10 +11,13 @@
             this.Comments = new HashSet<Comment>();
         }
 
+        [Required]
         public string Title { get; set; }
 
+        [Required]
         public string Summary { get; set; }
 
+        [Required]
         public string Content { get; set; }
 
         public string ImageUrl { get; set; }

@@ -8,6 +8,7 @@
     {
         public int ArticleId { get; set; }
 
+        [Required]
         public string Author { get; set; }
 
         [DataType(DataType.EmailAddress)]

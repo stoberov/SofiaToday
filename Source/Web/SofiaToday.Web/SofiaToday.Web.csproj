@@ -202,7 +202,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
-    <Compile Include="Areas\Administration\Controllers\EventsManagementController.cs" />
     <Compile Include="Areas\Administration\ViewModels\EventInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\EventViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -215,7 +214,6 @@
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
-    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -379,7 +377,6 @@
     <Content Include="Content\KendoUI\fonts\glyphs\KendoUIGlyphs.woff" />
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
-    <Content Include="Areas\Administration\Views\Events\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -440,7 +437,6 @@
     <Content Include="Views\Events\Index.cshtml" />
     <Content Include="Views\Shared\_RelatedEventsPartial.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\RelatedEvent.cshtml" />
-    <Content Include="Views\Profile\Calendar.cshtml" />
     <Content Include="Views\Shared\_MoreDetailsPartial.cshtml" />
     <Content Include="Views\Shared\_DailyEventsPartial.cshtml" />
     <Content Include="Views\Shared\_FeaturedEventsPartial.cshtml" />
