@@ -458,10 +458,6 @@
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\Events\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="Views\Base\" />
-    <Folder Include="Views\Error\" />
-    <Folder Include="Views\EventsManagement\" />
-    <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

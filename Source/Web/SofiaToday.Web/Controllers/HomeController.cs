@@ -24,13 +24,20 @@
         {
             var upcomingEvents = this.events.GetUpcomingEvents().To<EventViewModel>().ToList();
             var featuredEvents = this.events.GetFeaturedEvents().To<EventViewModel>().ToList();
-            var dailyEvents = this.events.GetDailyEvents(DateTime.UtcNow).To<EventViewModel>().ToList();
+
+            var dailyEvents = this.events.GetDailyEvents(DateTime.UtcNow);
+            var morningEvents = dailyEvents.Where(x => x.StartDateTime.Hour <= 12).To<EventViewModel>().ToList();
+            var afternoonEvents = dailyEvents.Where(x => x.StartDateTime.Hour > 12 && x.StartDateTime.Hour < 20).To<EventViewModel>().ToList();
+            var eveningEvents = dailyEvents.Where(x => x.StartDateTime.Hour > 20).To<EventViewModel>().ToList();
+
 
             var viewModel = new IndexViewModel
             {
                 FeaturedEvents = featuredEvents,
                 UpcomingEvents = upcomingEvents,
-                DailyEvents = dailyEvents
+                DailyMorningEvents = morningEvents,
+                DailyAfternoonEvents = afternoonEvents,
+                DailyEveningEvents = eveningEvents
             };
 
             return this.View(viewModel);

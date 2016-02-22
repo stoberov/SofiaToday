@@ -4,7 +4,11 @@
     <h2>Events Today - @DateTime.Today.ToString("dd MMMM")</h2>
 
     <div class="list-group">
-        @foreach (var item in Model.DailyEvents)
+        <div class="text-center">
+            <h3><span class="glyphicon glyphicon-time"></span> <br />Morning</h3>
+        </div>
+        
+        @foreach (var item in Model.DailyMorningEvents)
         {
             <div class="list-group-item">
                 <div class="row-picture">
@@ -16,7 +20,55 @@
                         @item.Location
                     </div>
                     <div class="col-md-4">@item.Category</div>
-                    <div class="col-md-2">@item.StartDateTime.Hour:@item.StartDateTime.Minute</div>
+                    <div class="col-md-2">@item.StartDateTime.ToString("hh:mm")</div>
+                </div>
+            </div>
+            <div class="list-group-separator"></div>
+        }
+    </div>
+
+    <div class="list-group">
+        <div class="text-center">
+            <h3><span class="glyphicon glyphicon-sunglasses"></span> <br />Afternoon</h3>
+        </div>
+
+        @foreach (var item in Model.DailyMorningEvents)
+        {
+            <div class="list-group-item">
+                <div class="row-picture">
+                    <a href="/events/details/@item.Id"><img class="circle" src="@item.ImageUrl" alt="@item.Title"></a>
+                </div>
+                <div class="row-content">
+                    <div class="col-md-6">
+                        <a href="/events/details/@item.Id"><strong>@item.Title</strong> <br /></a>
+                        @item.Location
+                    </div>
+                    <div class="col-md-4">@item.Category</div>
+                    <div class="col-md-2">@item.StartDateTime.ToString("hh:mm")</div>
+                </div>
+            </div>
+            <div class="list-group-separator"></div>
+        }
+    </div>
+
+    <div class="list-group">
+        <div class="text-center">
+            <h3><span class="glyphicon glyphicon-glass"></span> <br />Evening</h3>
+        </div>
+
+        @foreach (var item in Model.DailyEveningEvents)
+        {
+            <div class="list-group-item">
+                <div class="row-picture">
+                    <a href="/events/details/@item.Id"><img class="circle" src="@item.ImageUrl" alt="@item.Title"></a>
+                </div>
+                <div class="row-content">
+                    <div class="col-md-6">
+                        <a href="/events/details/@item.Id"><strong>@item.Title</strong> <br /></a>
+                        @item.Location
+                    </div>
+                    <div class="col-md-4">@item.Category</div>
+                    <div class="col-md-2">@item.StartDateTime.ToString("hh:mm")</div>
                 </div>
             </div>
             <div class="list-group-separator"></div>

@@ -9,6 +9,10 @@
 
         public IEnumerable<EventViewModel> UpcomingEvents { get; set; }
 
-        public IEnumerable<EventViewModel> DailyEvents { get; set; }
+        public IEnumerable<EventViewModel> DailyMorningEvents { get; set; }
+
+        public IEnumerable<EventViewModel> DailyAfternoonEvents { get; set; }
+
+        public IEnumerable<EventViewModel> DailyEveningEvents { get; set; }
     }
 }
