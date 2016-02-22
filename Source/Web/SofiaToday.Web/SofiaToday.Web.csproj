@@ -452,6 +452,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Author.cshtml" />
     <Content Include="Views\Articles\Create.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Content.cshtml" />
+    <Content Include="Views\Shared\_AdminPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\" />
