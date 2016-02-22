@@ -1,47 +1,11 @@
-﻿@model IEnumerable<SofiaToday.Web.ViewModels.Articles.ArticleViewModel>
+﻿@model SofiaToday.Web.ViewModels.Articles.AllArticlesViewModel
 @{
     ViewBag.Title = "All Articles";
 }
 
 <div class="row">
     <div class="col-md-9">
-
-        @foreach (var article in Model)
-        {
-            <div class="row">
-                <div class="col-md-12 post">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h4>
-                                <strong><a href="articles/details/@article.Id" class="post-title">@article.Title</a></strong>
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 post-header-line">
-                            <span class="glyphicon glyphicon-user"></span>by <a href="#">@article.Author</a> | <span class="glyphicon glyphicon-calendar">
-                            </span>@article.CreatedOn | <span class="glyphicon glyphicon-comment"></span>
-                            <a href="#">@article.Comments.Count Comments</a>
-                    </div>
-                </div>
-                <div class="row post-content">
-                    <div class="col-md-3">
-                        <a href="articles/details/@article.Id">
-                            <img src="@article.ImageUrl" alt="@article.Title" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="col-md-9">
-                        <p>
-                            Short paragraph
-                        </p>
-                        <p>
-                            <a class="btn btn-read-more" href="articles/details/@article.Id">Read more</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        }
+        @Html.DisplayFor(x => x.AllArticles)
     </div>
     <div class="col-md-3">
         <div>Sidebar</div>

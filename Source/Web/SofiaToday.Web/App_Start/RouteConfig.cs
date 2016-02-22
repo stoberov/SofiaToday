@@ -12,6 +12,7 @@
                 name: "JokePage",
                 url: "Joke/{id}",
                 defaults: new { controller = "Jokes", action = "ById" });
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

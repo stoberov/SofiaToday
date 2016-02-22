@@ -24,7 +24,12 @@
         [HttpGet]
         public ActionResult Index()
         {
-            var viewModel = this.articles.GetAll().To<ArticleViewModel>().ToList();
+            var allArticles = this.articles.GetAll().To<ArticleViewModel>().ToList();
+
+            var viewModel = new AllArticlesViewModel
+            {
+                AllArticles = allArticles
+            };
 
             return this.View(viewModel);
         }

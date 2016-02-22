@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using AutoMapper;
     using Data.Models;
     using Infrastructure.Mapping;
@@ -16,6 +17,7 @@
 
         public string ImageUrl { get; set; }
 
+        [UIHint("Author")]
         public string Author { get; set; }
 
         public DateTime CreatedOn { get; set; }

@@ -1,0 +1,35 @@
+﻿@model SofiaToday.Web.ViewModels.Articles.ArticleViewModel
+
+<div class="row">
+    <div class="col-md-12 post">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>
+                    <strong><a href="articles/details/@Model.Id" class="post-title">@Model.Title</a></strong>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 post-header-line">
+                @Html.DisplayFor(x => x.Author)
+                @Html.DisplayFor(x => x.CreatedOn)
+                 | <span class="glyphicon glyphicon-comment"></span> @Model.Comments.Count Comments
+            </div>
+        </div>
+        <div class="row post-content">
+            <div class="col-md-3">
+                <a href="articles/details/@Model.Id">
+                    <img src="@Model.ImageUrl" alt="@Model.Title" class="img-responsive">
+                </a>
+            </div>
+            <div class="col-md-9">
+                <p>
+                    @Model.Content
+                </p>
+                <p>
+                    <a class="btn btn-read-more" href="articles/details/@Model.Id">Read more</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

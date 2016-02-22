@@ -1,5 +1,6 @@
 ﻿namespace SofiaToday.Web.Controllers
 {
+    using System;
     using System.Linq;
     using System.Web.Mvc;
     using Data.Models;
@@ -18,11 +19,16 @@
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             var upcomingEvents = this.events.GetUpcomingEvents().To<EventViewModel>().ToList();
 
-            return this.View(upcomingEvents);
+            var viewModel = new AllEventsViewModel
+            {
+                AllEvents = upcomingEvents
+            };
+
+            return this.View(viewModel);
         }
 
         [HttpGet]

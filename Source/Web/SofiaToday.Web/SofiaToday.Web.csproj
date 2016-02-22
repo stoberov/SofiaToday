@@ -226,11 +226,13 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="ViewModels\Articles\AllArticlesViewModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleViewModel.cs" />
     <Compile Include="ViewModels\Articles\DetailsViewModel.cs" />
     <Compile Include="ViewModels\Articles\CommentInputModel.cs" />
     <Compile Include="ViewModels\Articles\CommentViewModel.cs" />
     <Compile Include="ViewModels\EventInputModel.cs" />
+    <Compile Include="ViewModels\Events\AllEventsViewModel.cs" />
     <Compile Include="ViewModels\Events\CreateEventInputViewModel.cs" />
     <Compile Include="ViewModels\Events\DetailsViewModel.cs" />
     <Compile Include="ViewModels\Events\EventViewModel.cs" />
@@ -445,6 +447,8 @@
     <Content Include="Views\Shared\DisplayTemplates\Decimal.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Location.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Description.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ArticleViewModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Author.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\" />

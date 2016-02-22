@@ -1,18 +1,8 @@
-﻿@model IEnumerable<SofiaToday.Web.ViewModels.Events.EventViewModel>
+﻿@model SofiaToday.Web.ViewModels.Events.AllEventsViewModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "All Upcoming Events";
 }
 
-<h2>Index</h2>
+<h2>All Upcoming Events</h2>
 
-@foreach(var item in Model)
-    {
-    <div class="col-md-4">
-        <p>@item.Title</p>
-        <p>@item.Location</p>
-        <p>@item.Price</p>
-        <p>@item.StartDateTime</p>
-        <p>@item.EndDateTime</p>
-        <p>@item.Description</p>
-    </div>
-}
+@Html.DisplayFor(x => x.AllEvents)
