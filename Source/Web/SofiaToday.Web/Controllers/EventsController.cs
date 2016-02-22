@@ -11,6 +11,8 @@
 
     public class EventsController : BaseController
     {
+        private const int ItemsPerPage = 6;
+
         private readonly IEventsService events;
 
         public EventsController(IEventsService events)
@@ -19,13 +21,27 @@
         }
 
         [HttpGet]
-        public ActionResult Index(string searchString)
+        public ActionResult Index(int page = 1)
         {
-            var upcomingEvents = this.events.GetUpcomingEvents().To<EventViewModel>().ToList();
+            var currentPage = page;
+            var allItemsCount = this.events.GetAll().Count();
+            var totalPages = (int)Math.Ceiling(allItemsCount / (decimal)ItemsPerPage);
+            var itemsToSkip = (currentPage - 1) * ItemsPerPage;
+
+            var events = this.events
+                .GetUpcomingEvents()
+                .OrderBy(x => x.CreatedOn)
+                .ThenBy(x => x.Id)
+                .Skip(itemsToSkip)
+                .Take(ItemsPerPage)
+                .To<EventViewModel>()
+                .ToList();
 
             var viewModel = new AllEventsViewModel
             {
-                AllEvents = upcomingEvents
+                AllEvents = events,
+                CurrentPage = currentPage,
+                TotalPages = totalPages
             };
 
             return this.View(viewModel);
