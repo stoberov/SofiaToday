@@ -2,18 +2,16 @@
 {
     using System.Linq;
     using System.Web.Mvc;
-    using Data.Common;
-    using Data.Models;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using Services.Data;
-    using SofiaToday.Data;
     using SofiaToday.Web.ViewModels.Events;
     using ViewModels;
-    public class MyEventsController : Controller
+
+    public class MyEventsController : BaseController
     {
-        IEventsService events;
+        private IEventsService events;
 
         public MyEventsController(IEventsService events)
         {
