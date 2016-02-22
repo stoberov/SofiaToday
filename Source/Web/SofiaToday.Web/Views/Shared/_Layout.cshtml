@@ -48,7 +48,17 @@
                     @if (Request.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("My Events", "Index", "MyEvents", new { area = string.Empty }, null)</li>
+                    }
+
+                    @if (User.IsInRole("Business"))
+                    {
                         <li>@Html.ActionLink("Create Event", "Create", "Events", new { area = string.Empty }, null)</li>
+                    }
+
+                    @if (User.IsInRole("Moderator"))
+                    {
+                        <li>@Html.ActionLink("Create Event", "Create", "Events", new { area = string.Empty }, null)</li>
+                        <li>@Html.ActionLink("Create Article", "Create", "Articles", new { area = string.Empty }, null)</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")

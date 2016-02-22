@@ -180,6 +180,18 @@
                 var result = await this.UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    // Automatically assign new users to "User" or "Business" role
+                    var currentUser = this.UserManager.FindByName(user.UserName);
+
+                    if (model.IsCompany)
+                    {
+                        this.UserManager.AddToRole(currentUser.Id, GlobalConstants.BusinessRoleName);
+                    }
+                    else
+                    {
+                        this.UserManager.AddToRole(currentUser.Id, GlobalConstants.UserRoleName);
+                    }
+
                     await this.SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     this.TempData["Notification"] = GlobalConstants.RegisterSuccess;
