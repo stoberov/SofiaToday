@@ -8,5 +8,9 @@
         IQueryable<Article> GetAll();
 
         Article GetArticleById(int id);
+
+        void AddNewArticle(Article newArticle);
+
+        void SaveChanges();
     }
 }

@@ -1,0 +1,8 @@
+﻿@model String
+
+@(Html.Kendo().Editor()
+      .Name("Content")
+      .Encode(false)
+      .HtmlAttributes(new { style = "height:440px" })
+      .Resizable(resizable => resizable.Content(true).Toolbar(true))
+)

@@ -14,7 +14,8 @@
     <hr>
     <img src="@Model.Article.ImageUrl" class="img-responsive">
     <hr>
-    <p class="lead">@Model.Article.Content</p>
+    <h3><strong>@Model.Article.Summary</strong></h3>
+    <p class="lead">@Html.Raw(@Model.Article.Content)</p>
     <br>
     <div class="fb-share-button" data-href="@Request.Url" data-type="button_count"></div>
 

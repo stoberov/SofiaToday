@@ -6,6 +6,7 @@
     using Common;
     using Data.Models;
     using Infrastructure.Mapping;
+    using Microsoft.AspNet.Identity;
     using Services.Data;
     using ViewModels.Articles;
     using ViewModels.Comments;
@@ -63,6 +64,38 @@
             };
 
             return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(CreateNewArticleViewModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            var newArticle = new Article
+            {
+                AuthorId = this.User.Identity.GetUserId(),
+                Title = model.Title,
+                Summary = model.Summary,
+                Content = model.Content,
+                ImageUrl = model.ImageUrl
+            };
+
+            this.articles.AddNewArticle(newArticle);
+
+            this.TempData["Notification"] = "Article added successfully!";
+
+            return this.Redirect("/");
+
         }
     }
 }

@@ -1,15 +1,14 @@
 ﻿namespace SofiaToday.Services.Data
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using SofiaToday.Data.Common;
     using SofiaToday.Data.Models;
 
     public class ArticlesService : IArticlesService
     {
-        IDbRepository<Article> articles;
-        IDbRepository<Comment> comments;
+        private IDbRepository<Article> articles;
+        private IDbRepository<Comment> comments;
 
         public ArticlesService(IDbRepository<Article> articles, IDbRepository<Comment> comments)
         {
@@ -25,6 +24,17 @@
         public Article GetArticleById(int id)
         {
             return this.articles.GetById(id);
+        }
+
+        public void AddNewArticle(Article newArticle)
+        {
+            this.articles.Add(newArticle);
+            this.articles.Save();
+        }
+
+        public void SaveChanges()
+        {
+            this.articles.Save();
         }
     }
 }
