@@ -16,13 +16,6 @@
             <span class="glyphicon glyphicon-calendar"></span> @Html.DisplayFor(m => m.StartDateTime)
         </p>
 
-        @if (Model.Price == 0)
-        {
-            <p>FREE</p>
-        }
-        else
-        {
-            @Html.DisplayFor(m => m.Price)
-        }
+        @Html.DisplayFor(m => m.Price)
     </div>
 </div>

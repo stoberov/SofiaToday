@@ -19,7 +19,7 @@
         public string Location { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:C}")]
-        public double Price { get; set; }
+        public decimal Price { get; set; }
 
         [DataType(DataType.ImageUrl)]
         public string ImageUrl { get; set; }
