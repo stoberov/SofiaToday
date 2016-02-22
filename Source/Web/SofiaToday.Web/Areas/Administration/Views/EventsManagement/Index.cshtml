@@ -1,0 +1,34 @@
+﻿
+@(Html.Kendo().Grid<SofiaToday.Web.Areas.Administration.ViewModels.EventInputModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+        columns.Bound(c => c.Title);
+        columns.Bound(c => c.StartDateTime);
+        columns.Bound(c => c.EndDateTime);
+        columns.Bound(c => c.Location);
+        columns.Bound(c => c.Category);
+        columns.Bound(c => c.Price);
+        columns.Bound(c => c.IsFeatured);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })
+      .ToolBar(toolbar => {
+            toolbar.Create();
+      })
+      .ColumnMenu()
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Sortable(sortable => {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable()
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Events_Read", "EventsManagement"))
+          .Create(create => create.Action("Events_Create", "EventsManagement"))
+          .Update(update => update.Action("Events_Update", "EventsManagement"))
+          .Destroy(destroy => destroy.Action("Events_Destroy", "EventsManagement"))
+      )
+)

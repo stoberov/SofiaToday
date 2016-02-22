@@ -4,7 +4,7 @@
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class EventViewMode : IMapFrom<Event>
+    public class EventViewModel : IMapFrom<Event>
     {
         public int Id { get; set; }
 

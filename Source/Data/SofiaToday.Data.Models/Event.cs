@@ -14,7 +14,6 @@
         public DateTime StartDateTime { get; set; }
 
         [Required]
-        [Display(Name = "End Date")]
         public DateTime EndDateTime { get; set; }
 
         [Required]
@@ -33,8 +32,7 @@
         public string ImageUrl { get; set; }
 
         public bool IsFeatured { get; set; }
-
-        [Display(Name = "Event website")]
+        
         public string OfficialUrl { get; set; }
     }
 }

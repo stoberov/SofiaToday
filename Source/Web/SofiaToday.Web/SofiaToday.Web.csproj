@@ -202,6 +202,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\EventsManagementController.cs" />
     <Compile Include="Areas\Administration\ViewModels\EventInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\EventViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -232,7 +233,7 @@
     <Compile Include="ViewModels\Articles\DetailsViewModel.cs" />
     <Compile Include="ViewModels\Articles\CommentInputModel.cs" />
     <Compile Include="ViewModels\Articles\CommentViewModel.cs" />
-    <Compile Include="ViewModels\EventInputModel.cs" />
+    <Compile Include="ViewModels\Events\EventInputModel.cs" />
     <Compile Include="ViewModels\Events\AllEventsViewModel.cs" />
     <Compile Include="ViewModels\Events\CreateEventInputViewModel.cs" />
     <Compile Include="ViewModels\Events\DetailsViewModel.cs" />
@@ -249,6 +250,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <None Include="Views\Shared\EditorTemplates\EventInputModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -377,6 +379,7 @@
     <Content Include="Content\KendoUI\fonts\glyphs\KendoUIGlyphs.woff" />
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
+    <Content Include="Areas\Administration\Views\EventsManagement\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -457,6 +460,7 @@
     <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\Error\" />
+    <Folder Include="Views\EventsManagement\" />
     <Folder Include="Views\Users\" />
   </ItemGroup>
   <ItemGroup>
