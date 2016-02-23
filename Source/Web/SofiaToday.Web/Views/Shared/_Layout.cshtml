@@ -15,7 +15,6 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/kendo")
-
 </head>
 <body>
     @RenderSection("sharing", required: false)
@@ -24,9 +23,19 @@
 
     <div class="container body-content">
 
+        @RenderSection("messages", required: false)
+
         @Html.Partial("_NotificationsPartial")
 
-        @RenderBody()
+        @if (IsSectionDefined("Sidebar"))
+           {
+            <div class="col-md-9">@RenderBody()</div>
+            <div class="col-md-3">@RenderSection("Sidebar", required: false)</div>
+        }
+        else
+        {
+            @RenderBody()
+        }
     </div>
 
     @Html.Partial("_FooterPartial")

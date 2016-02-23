@@ -6,21 +6,24 @@
 
 <h3>@Model.Event.Title</h3>
 
-<div class="col-md-9">
+<div class="col-md-12">
     <img class="img-responsive" src="@Model.Event.ImageUrl" alt="@Model.Event.Title" />
     <div class="col-md-12 well">
         @Html.DisplayFor(m => m.Event.Location)<br />
         @Html.DisplayFor(m => m.Event.Price)<br />
         @Html.DisplayFor(m => m.Event.StartDateTime)
     </div>
-
-    <div class="col-md-12">
-        <p>@Html.Raw(@Model.Event.Description)</p>
-    </div>
 </div>
 
-<div class="col-md-3">
+<div class="col-md-12">
+    <p>@Html.Raw(@Model.Event.Description)</p>
+</div>
+
+@section SideBar {
     @Html.Partial("_MoreDetailsPartial")
-    <hr />
     @Html.Partial("_RelatedEventsPartial")
-</div>
+}
+
+@section messages {
+    <div>Early bird discount!</div>
+}
