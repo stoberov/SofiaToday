@@ -45,10 +45,12 @@
   <ItemGroup>
     <Compile Include="ArticlesService.cs" />
     <Compile Include="CommentsService.cs" />
+    <Compile Include="Contracts\ICommentsService.cs" />
     <Compile Include="EventsService.cs" />
     <Compile Include="Contracts\IArticlesService.cs" />
-    <Compile Include="Contracts\ICommentsService.cs" />
+    <Compile Include="Contracts\IMessagesService.cs" />
     <Compile Include="Contracts\IEventsService.cs" />
+    <Compile Include="MessagesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

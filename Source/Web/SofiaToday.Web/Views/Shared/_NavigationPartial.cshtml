@@ -12,6 +12,7 @@
             <ul class="nav navbar-nav">
                 <li>@Html.ActionLink("Events", "Index", "Events", new { area = string.Empty }, null)</li>
                 <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = string.Empty }, null)</li>
+                <li>@Html.ActionLink("Message", "Index", "Messages", new { area = string.Empty }, null)</li>
 
                 @if (Request.IsAuthenticated)
                 {

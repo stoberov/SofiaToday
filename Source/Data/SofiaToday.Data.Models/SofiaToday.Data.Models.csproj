@@ -63,6 +63,7 @@
     <Compile Include="Article.cs" />
     <Compile Include="CategoryType.cs" />
     <Compile Include="Comment.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

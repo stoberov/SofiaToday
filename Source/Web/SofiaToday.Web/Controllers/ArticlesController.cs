@@ -82,14 +82,7 @@
                 return this.View(model);
             }
 
-            var newArticle = new Article
-            {
-                AuthorId = this.User.Identity.GetUserId(),
-                Title = model.Title,
-                Summary = model.Summary,
-                Content = model.Content,
-                ImageUrl = model.ImageUrl
-            };
+            var newArticle = this.Mapper.Map<Article>(model);
 
             this.articles.AddNewArticle(newArticle);
 

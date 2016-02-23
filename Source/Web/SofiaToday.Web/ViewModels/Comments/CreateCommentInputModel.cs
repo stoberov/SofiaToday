@@ -11,9 +11,11 @@
         [Required]
         public string Author { get; set; }
 
+        [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        [Required]
         [DataType(DataType.MultilineText)]
         public string Content { get; set; }
     }

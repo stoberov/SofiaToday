@@ -7,6 +7,8 @@
         public const string BusinessRoleName = "Business";
 
         public const string CommentAddedSuccess = "Thank you for your comment!";
+        public const string MessageAddedSuccess = "Thank you for contacting us. We'll get back to you shortly!";
+        
 
         public const string EventAddedSuccess = "Event added successfully!";
         public const string LogInSuccess = "Successful Login!";
