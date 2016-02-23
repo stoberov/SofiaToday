@@ -4,13 +4,15 @@
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
     using Data.Models;
+    using Infrastructure.Mapping;
 
-    public class CreateEventInputModel
+    public class CreateEventInputModel : IMapTo<Event>
     {
         [Required]
         public string Title { get; set; }
 
         [Display(Name = "Start Date")]
+        [DataType(DataType.DateTime)]
         public DateTime StartDateTime { get; set; }
 
         [Display(Name = "End Date")]

@@ -79,19 +79,7 @@
                 return this.View(model);
             }
 
-            var newEvent = new Event
-            {
-                CreatorId = this.User.Identity.GetUserId(),
-                Title = model.Title,
-                StartDateTime = model.StartDateTime,
-                EndDateTime = model.EndDateTime,
-                Location = model.Location,
-                Description = model.Description,
-                Price = model.Price,
-                ImageUrl = model.ImageUrl,
-                OfficialUrl = model.OfficialUrl,
-                Category = model.Category
-            };
+            var newEvent = this.Mapper.Map<Event>(model);
 
             this.events.AddNewEvent(newEvent);
 

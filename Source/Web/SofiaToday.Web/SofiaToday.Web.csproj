@@ -204,10 +204,12 @@
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
     <Compile Include="Areas\Administration\Controllers\ArticlesManagementController.cs" />
     <Compile Include="Areas\Administration\Controllers\EventsManagementController.cs" />
+    <Compile Include="Areas\Administration\Controllers\MessagesManagementController.cs" />
     <Compile Include="Areas\Administration\ViewModels\ArticleGridViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\ArticleInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\EventInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\EventViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\MessageViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -255,6 +257,7 @@
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ArticleGridViewModel.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ArticleInputModel.cshtml" />
     <Content Include="Views\Messages\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\MessagesManagement\Index.cshtml" />
     <None Include="Views\Shared\EditorTemplates\EventInputModel.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
@@ -464,6 +467,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\Events\" />
+    <Folder Include="Views\MessagesManagement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
