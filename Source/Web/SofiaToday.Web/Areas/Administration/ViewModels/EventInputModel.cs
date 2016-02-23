@@ -10,12 +10,6 @@
 
         public string Title { get; set; }
 
-        [Display(Name = "Start Date")]
-        public DateTime StartDateTime { get; set; }
-
-        [Display(Name = "End Date")]
-        public DateTime EndDateTime { get; set; }
-
         public string Description { get; set; }
 
         public string Location { get; set; }

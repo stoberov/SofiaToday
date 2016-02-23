@@ -202,7 +202,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdministrationController.cs" />
+    <Compile Include="Areas\Administration\Controllers\ArticlesManagementController.cs" />
     <Compile Include="Areas\Administration\Controllers\EventsManagementController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ArticleGridViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\ArticleInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\EventInputModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\EventViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -250,6 +253,9 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Content Include="Areas\Administration\Views\ArticlesManagement\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\CreateNewArticleViewModel.cshtml" />
+    <Content Include="Views\Shared\ArticleInputModel.cshtml" />
     <None Include="Views\Shared\EditorTemplates\EventInputModel.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
@@ -460,7 +466,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\Events\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,28 +1,31 @@
-﻿
+﻿@{ 
+    ViewBag.Title = "Manage Events";
+}
+
 @(Html.Kendo().Grid<SofiaToday.Web.Areas.Administration.ViewModels.EventInputModel>()
       .Name("grid")
       .Columns(columns =>
       {
-        columns.Bound(c => c.Title);
-        columns.Bound(c => c.StartDateTime);
-        columns.Bound(c => c.EndDateTime);
-        columns.Bound(c => c.Location);
-        columns.Bound(c => c.Category);
-        columns.Bound(c => c.Price);
-        columns.Bound(c => c.IsFeatured);
-        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+          columns.Bound(c => c.Title);
+          columns.Bound(c => c.Location);
+          columns.Bound(c => c.Category);
+          columns.Bound(c => c.Price);
+          columns.Bound(c => c.IsFeatured);
+          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
       })
-      .ToolBar(toolbar => {
-            toolbar.Create();
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create();
       })
       .ColumnMenu()
       .Editable(editable => editable.Mode(GridEditMode.PopUp))
       .Pageable()
-      .Sortable(sortable => {
+      .Sortable(sortable =>
+      {
           sortable.SortMode(GridSortMode.SingleColumn);
       })
       .Filterable()
-      .Scrollable()
+      .Scrollable(scr => scr.Height(600))
       .DataSource(dataSource => dataSource
           .Ajax()
           .Model(model => model.Id(p => p.Id))
@@ -32,3 +35,7 @@
           .Destroy(destroy => destroy.Action("Events_Destroy", "EventsManagement"))
       )
 )
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

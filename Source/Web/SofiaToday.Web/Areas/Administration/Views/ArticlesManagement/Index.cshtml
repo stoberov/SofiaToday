@@ -1,0 +1,34 @@
+﻿@{ 
+    ViewBag.Title = "Manage Articles";
+}
+
+@(Html.Kendo().Grid<SofiaToday.Web.Areas.Administration.ViewModels.ArticleGridViewModel>()
+      .Name("grid")
+      .Columns(columns =>
+      {
+          columns.Bound(c => c.Title);
+          columns.Bound(c => c.Summary);
+          columns.Bound(c => c.Author);
+          columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
+      })
+      .ToolBar(toolbar =>
+      {
+          toolbar.Create();
+      })
+      .Editable(editable => editable.Mode(GridEditMode.PopUp))
+      .Pageable()
+      .Sortable(sortable =>
+      {
+          sortable.SortMode(GridSortMode.SingleColumn);
+      })
+      .Filterable()
+      .Scrollable(src => src.Height(500))
+      .DataSource(dataSource => dataSource
+          .Ajax()
+          .Model(model => model.Id(p => p.Id))
+          .Read(read => read.Action("Articles_Read", "ArticlesManagement"))
+          .Create(create => create.Action("Articles_Create", "ArticlesManagement"))
+          .Update(update => update.Action("Articles_Update", "ArticlesManagement"))
+          .Destroy(destroy => destroy.Action("Articles_Destroy", "ArticlesManagement"))
+      )
+)

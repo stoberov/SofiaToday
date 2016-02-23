@@ -48,8 +48,6 @@
                 var entity = new Event
                 {
                     Title = newEvent.Title,
-                    StartDateTime = newEvent.StartDateTime,
-                    EndDateTime = newEvent.EndDateTime,
                     Location = newEvent.Location,
                     Category = newEvent.Category,
                     Price = newEvent.Price,

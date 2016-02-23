@@ -1,7 +1,6 @@
 ﻿namespace SofiaToday.Data.Models
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using Common.Models;
 
@@ -10,10 +9,8 @@
         [Required]
         public string Title { get; set; }
 
-        [Required]
         public DateTime StartDateTime { get; set; }
 
-        [Required]
         public DateTime EndDateTime { get; set; }
 
         [Required]
@@ -32,7 +29,7 @@
         public string ImageUrl { get; set; }
 
         public bool IsFeatured { get; set; }
-        
+
         public string OfficialUrl { get; set; }
     }
 }
