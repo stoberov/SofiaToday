@@ -37,35 +37,13 @@
                 IsFeatured = c.IsFeatured
             });
 
-            return Json(result);
-        }
-
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Events_Create([DataSourceRequest]DataSourceRequest request, EventInputModel newEvent)
-        {
-            if (ModelState.IsValid)
-            {
-                var entity = new Event
-                {
-                    Title = newEvent.Title,
-                    Location = newEvent.Location,
-                    Category = newEvent.Category,
-                    Price = newEvent.Price,
-                    IsFeatured = newEvent.IsFeatured
-                };
-
-                db.Events.Add(entity);
-                db.SaveChanges();
-                newEvent.Id = entity.Id;
-            }
-
-            return Json(new[] { newEvent }.ToDataSourceResult(request, ModelState));
+            return this.Json(result);
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Events_Update([DataSourceRequest]DataSourceRequest request, EventViewModel updatedEvent)
         {
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {
                 var entity = new Event
                 {
@@ -79,18 +57,18 @@
                     IsFeatured = updatedEvent.IsFeatured
                 };
 
-                db.Events.Attach(entity);
-                db.Entry(entity).State = EntityState.Modified;
-                db.SaveChanges();
+                this.db.Events.Attach(entity);
+                this.db.Entry(entity).State = EntityState.Modified;
+                this.db.SaveChanges();
             }
 
-            return Json(new[] { updatedEvent }.ToDataSourceResult(request, ModelState));
+            return this.Json(new[] { updatedEvent }.ToDataSourceResult(request, ModelState));
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Events_Destroy([DataSourceRequest]DataSourceRequest request, EventViewModel deletedEvent)
         {
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {
                 var entity = new Event
                 {
@@ -104,9 +82,9 @@
                     IsFeatured = deletedEvent.IsFeatured
                 };
 
-                db.Events.Attach(entity);
-                db.Events.Remove(entity);
-                db.SaveChanges();
+                this.db.Events.Attach(entity);
+                this.db.Events.Remove(entity);
+                this.db.SaveChanges();
             }
 
             return Json(new[] { deletedEvent }.ToDataSourceResult(request, ModelState));
@@ -114,7 +92,7 @@
 
         protected override void Dispose(bool disposing)
         {
-            db.Dispose();
+            this.db.Dispose();
             base.Dispose(disposing);
         }
     }

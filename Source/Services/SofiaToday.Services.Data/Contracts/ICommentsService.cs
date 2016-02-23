@@ -1,4 +1,4 @@
-﻿namespace SofiaToday.Services.Data
+﻿namespace SofiaToday.Services.Data.Contracts
 {
     using System.Linq;
     using SofiaToday.Data.Models;

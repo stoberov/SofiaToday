@@ -4,8 +4,7 @@
     using System.Web.Mvc;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
-    using Services.Data;
-    using SofiaToday.Data.Common;
+    using Services.Data.Contracts;
     using SofiaToday.Data.Models;
     using SofiaToday.Web.Infrastructure.Mapping;
     using ViewModels;

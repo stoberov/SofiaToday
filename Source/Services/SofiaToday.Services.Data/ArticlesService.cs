@@ -1,7 +1,7 @@
 ﻿namespace SofiaToday.Services.Data
 {
-    using System;
     using System.Linq;
+    using Contracts;
     using SofiaToday.Data.Common;
     using SofiaToday.Data.Models;
 

@@ -3,7 +3,7 @@
     using System.Web.Mvc;
     using Common;
     using Data.Models;
-    using Services.Data;
+    using Services.Data.Contracts;
     using ViewModels.Articles;
 
     public class CommentsController : BaseController

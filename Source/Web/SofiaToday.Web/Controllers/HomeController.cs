@@ -5,8 +5,7 @@
     using System.Web.Mvc;
 
     using Infrastructure.Mapping;
-
-    using Services.Data;
+    using Services.Data.Contracts;
     using ViewModels.Events;
     using ViewModels.Home;
 
@@ -29,7 +28,6 @@
             var morningEvents = dailyEvents.Where(x => x.StartDateTime.Hour <= 12).To<EventViewModel>().ToList();
             var afternoonEvents = dailyEvents.Where(x => x.StartDateTime.Hour > 12 && x.StartDateTime.Hour < 20).To<EventViewModel>().ToList();
             var eveningEvents = dailyEvents.Where(x => x.StartDateTime.Hour > 20).To<EventViewModel>().ToList();
-
 
             var viewModel = new IndexViewModel
             {

@@ -7,6 +7,7 @@
     using Data.Models;
     using Infrastructure.Mapping;
     using Microsoft.AspNet.Identity;
+    using Services.Data.Contracts;
     using SofiaToday.Services.Data;
     using ViewModels.Events;
 

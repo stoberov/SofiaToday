@@ -46,9 +46,9 @@
     <Compile Include="ArticlesService.cs" />
     <Compile Include="CommentsService.cs" />
     <Compile Include="EventsService.cs" />
-    <Compile Include="IArticlesService.cs" />
-    <Compile Include="ICommentsService.cs" />
-    <Compile Include="IEventsService.cs" />
+    <Compile Include="Contracts\IArticlesService.cs" />
+    <Compile Include="Contracts\ICommentsService.cs" />
+    <Compile Include="Contracts\IEventsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

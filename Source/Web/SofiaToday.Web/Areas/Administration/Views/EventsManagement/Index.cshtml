@@ -30,7 +30,6 @@
           .Ajax()
           .Model(model => model.Id(p => p.Id))
           .Read(read => read.Action("Events_Read", "EventsManagement"))
-          .Create(create => create.Action("Events_Create", "EventsManagement"))
           .Update(update => update.Action("Events_Update", "EventsManagement"))
           .Destroy(destroy => destroy.Action("Events_Destroy", "EventsManagement"))
       )
