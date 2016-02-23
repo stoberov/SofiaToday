@@ -232,12 +232,12 @@
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Articles\AllArticlesViewModel.cs" />
     <Compile Include="ViewModels\Articles\ArticleViewModel.cs" />
-    <Compile Include="ViewModels\Articles\CreateNewArticleViewModel.cs" />
-    <Compile Include="ViewModels\Articles\DetailsViewModel.cs" />
-    <Compile Include="ViewModels\Articles\CommentInputModel.cs" />
-    <Compile Include="ViewModels\Articles\CommentViewModel.cs" />
+    <Compile Include="ViewModels\Articles\CreateArticleInputModel.cs" />
+    <Compile Include="ViewModels\Articles\ArticlePageViewModel.cs" />
+    <Compile Include="ViewModels\Comments\CreateCommentInputModel.cs" />
+    <Compile Include="ViewModels\Comments\CommentViewModel.cs" />
     <Compile Include="ViewModels\Events\AllEventsViewModel.cs" />
-    <Compile Include="ViewModels\Events\CreateEventViewModel.cs" />
+    <Compile Include="ViewModels\Events\CreateEventInputModel.cs" />
     <Compile Include="ViewModels\Events\EventPageViewModel.cs" />
     <Compile Include="ViewModels\Events\EventViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />

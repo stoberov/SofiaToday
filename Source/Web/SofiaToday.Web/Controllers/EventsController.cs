@@ -71,7 +71,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CreateEventViewModel model)
+        public ActionResult Create(CreateEventInputModel model)
         {
             if (!this.ModelState.IsValid)
             {

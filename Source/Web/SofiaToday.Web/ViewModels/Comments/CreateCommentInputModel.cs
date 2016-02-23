@@ -4,7 +4,7 @@
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class CommentInputModel : IMapFrom<Comment>
+    public class CreateCommentInputModel : IMapFrom<Comment>
     {
         public int ArticleId { get; set; }
 

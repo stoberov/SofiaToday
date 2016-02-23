@@ -3,11 +3,11 @@
     using System.Collections.Generic;
     using Comments;
 
-    public class DetailsViewModel
+    public class ArticlePageViewModel
     {
         public ArticleViewModel Article { get; set; }
 
-        public CommentInputModel CommentInputModel { get; set; }
+        public CreateCommentInputModel CommentInputModel { get; set; }
 
         public IEnumerable<CommentViewModel> Comments { get; set; }
     }

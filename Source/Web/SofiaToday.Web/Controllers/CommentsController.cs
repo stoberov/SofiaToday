@@ -23,7 +23,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(int id, DetailsViewModel model)
+        public ActionResult Create(int id, ArticlePageViewModel model)
         {
             if (!this.ModelState.IsValid)
             {

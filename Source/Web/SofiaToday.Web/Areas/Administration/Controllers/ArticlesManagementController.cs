@@ -35,7 +35,7 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Articles_Create([DataSourceRequest]DataSourceRequest request, CreateNewArticleViewModel article)
+        public ActionResult Articles_Create([DataSourceRequest]DataSourceRequest request, CreateArticleInputModel article)
         {
             var newId = 0;
             if (this.ModelState.IsValid)
@@ -62,7 +62,7 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Articles_Update([DataSourceRequest]DataSourceRequest request, CreateNewArticleViewModel article)
+        public ActionResult Articles_Update([DataSourceRequest]DataSourceRequest request, CreateArticleInputModel article)
         {
             if (this.ModelState.IsValid)
             {

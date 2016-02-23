@@ -57,7 +57,7 @@
             var singleArticle = this.articles.GetArticleById(id);
             var articleComments = this.comments.GetArticleComments(id).To<CommentViewModel>().ToList();
 
-            var viewModel = new DetailsViewModel
+            var viewModel = new ArticlePageViewModel
             {
                 Article = this.Mapper.Map<ArticleViewModel>(singleArticle),
                 Comments = articleComments
@@ -74,7 +74,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CreateNewArticleViewModel model)
+        public ActionResult Create(CreateArticleInputModel model)
         {
             if (!this.ModelState.IsValid)
             {

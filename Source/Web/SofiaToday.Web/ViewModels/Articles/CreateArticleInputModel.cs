@@ -5,7 +5,7 @@
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class CreateNewArticleViewModel : IMapFrom<Article>
+    public class CreateArticleInputModel : IMapFrom<Article>
     {
         public int Id { get; set; }
 
