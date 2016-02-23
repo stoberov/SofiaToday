@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Web.Mvc;
+    using Common;
     using Data.Models;
     using Infrastructure.Mapping;
     using Microsoft.AspNet.Identity;
@@ -93,7 +94,7 @@
 
             this.events.AddNewEvent(newEvent);
 
-            this.TempData["Notification"] = "Event added successfully!";
+            this.TempData["Notification"] = GlobalConstants.EventAddedSuccess;
 
             return this.Redirect("/");
         }

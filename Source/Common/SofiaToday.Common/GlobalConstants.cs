@@ -12,5 +12,8 @@
         public const string RegisterSuccess = "Registration successful!";
 
         public const string CommentAddedSuccess = "Thank you for your comment!";
+
+        public const string EventAddedSuccess = "Event added successfully!";
+        public const string ArticleAddedSuccess = "Article added successfully!";
     }
 }

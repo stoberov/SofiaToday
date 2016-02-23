@@ -1,0 +1,35 @@
+﻿<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("SofiaToday", "Index", "Home", new { area = string.Empty }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Events", "Index", "Events", new { area = string.Empty }, null)</li>
+                <li>@Html.ActionLink("Articles", "Index", "Articles", new { area = string.Empty }, null)</li>
+
+                @if (Request.IsAuthenticated)
+                {
+
+                }
+
+                @if (User.IsInRole("Business") || User.IsInRole("Administrator") || User.IsInRole("Moderator"))
+                {
+                    <li>@Html.ActionLink("Create Event", "Create", "Events", new { area = string.Empty }, null)</li>
+                }
+
+                @if (User.IsInRole("Moderator") || User.IsInRole("Administrator"))
+                {
+                    <li>@Html.ActionLink("Create Article", "Create", "Articles", new { area = string.Empty }, null)</li>
+                }
+            </ul>
+            @Html.Partial("_AdminPartial")
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+</div>

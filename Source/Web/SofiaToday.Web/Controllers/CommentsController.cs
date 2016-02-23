@@ -44,7 +44,7 @@
 
             this.TempData["Notification"] = GlobalConstants.CommentAddedSuccess;
 
-            return this.Redirect("/");
+            return this.Redirect(this.Request.UrlReferrer.ToString());
         }
     }
 }
