@@ -4,7 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     using Data.Models;
 
-    public class DetailsViewModel
+    public class EventPageViewModel
     {
         public EventViewModel Event { get; set; }
 

@@ -5,7 +5,7 @@
     using System.Web.Mvc;
     using Data.Models;
 
-    public class CreateEventInputViewModel
+    public class CreateEventViewModel
     {
         [Required]
         public string Title { get; set; }

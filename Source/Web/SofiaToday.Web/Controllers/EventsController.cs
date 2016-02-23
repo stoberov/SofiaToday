@@ -54,7 +54,7 @@
             var singleEvent = this.events.GetEventById(id);
             var relatedEvents = this.events.GetRandomEvents(2);
 
-            var viewModel = new DetailsViewModel
+            var viewModel = new EventPageViewModel
             {
                 Event = this.Mapper.Map<EventViewModel>(singleEvent),
                 RelatedEvents = relatedEvents.To<EventViewModel>().ToList()
@@ -71,7 +71,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CreateEventInputViewModel model)
+        public ActionResult Create(CreateEventViewModel model)
         {
             if (!this.ModelState.IsValid)
             {

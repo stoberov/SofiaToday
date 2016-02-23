@@ -236,12 +236,10 @@
     <Compile Include="ViewModels\Articles\DetailsViewModel.cs" />
     <Compile Include="ViewModels\Articles\CommentInputModel.cs" />
     <Compile Include="ViewModels\Articles\CommentViewModel.cs" />
-    <Compile Include="ViewModels\Events\EventInputModel.cs" />
     <Compile Include="ViewModels\Events\AllEventsViewModel.cs" />
-    <Compile Include="ViewModels\Events\CreateEventInputViewModel.cs" />
-    <Compile Include="ViewModels\Events\DetailsViewModel.cs" />
+    <Compile Include="ViewModels\Events\CreateEventViewModel.cs" />
+    <Compile Include="ViewModels\Events\EventPageViewModel.cs" />
     <Compile Include="ViewModels\Events\EventViewModel.cs" />
-    <Compile Include="ViewModels\Events\UpcomingPassedEventsViewModel.cs" />
     <Compile Include="ViewModels\Home\IndexViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
