@@ -1,0 +1,83 @@
+﻿@model SofiaToday.Web.ViewModels.Articles.DetailsViewModel
+
+@{
+    ViewBag.Title = "Article Details";
+}
+
+<div class="col-md-9">
+    <h1>@Model.Article.Title</h1>
+    <p class="lead">
+        <i class="glyphicon glyphicon-user"></i> by <a href="">@Model.Article.Author</a>
+    </p>
+    <hr>
+    <p><i class="glyphicon glyphicon-calendar"></i> Posted on @Model.Article.CreatedOn</p>
+    <hr>
+    <img src="@Model.Article.ImageUrl" class="img-responsive">
+    <hr>
+    <h3><strong>@Model.Article.Summary</strong></h3>
+    <p class="lead">@Html.Raw(@Model.Article.Content)</p>
+    <br>
+    <div class="fb-share-button" data-href="@Request.Url" data-type="button_count"></div>
+
+    <div class="well">
+        <h4><i class="glyphicon glyphicon-comment"></i> Leave a Comment:</h4>
+        @using (Html.BeginForm("Create", "Comments", new { id = @Model.Article.Id }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.CommentInputModel.Author, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.CommentInputModel.Author, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.CommentInputModel.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.EditorFor(m => m.CommentInputModel.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.CommentInputModel.Content, new { @class = "col-md-2 control-label" })
+            <div class="col-md-8">
+                @Html.EditorFor(m => m.CommentInputModel.Content, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-primary btn-raised" value="Post comment" />
+            </div>
+        </div>
+        }
+    </div>
+
+    <h3>Comments:</h3>
+    <div class="row">
+        @foreach (var comment in Model.Comments)
+            {
+        <h3>
+            <i class="glyphicon glyphicon-comment"></i> @comment.Author says:
+            <small> @comment.CreatedOn</small>
+        </h3>
+        <p>@comment.Content</p>
+        }
+    </div>
+</div>
+<div class="col-md-3">Sidebar</div>
+
+@section sharing {
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5&appId=1610787885810301";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

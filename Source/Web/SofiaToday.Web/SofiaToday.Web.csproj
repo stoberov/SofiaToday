@@ -467,7 +467,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Administration\Models\Events\" />
-    <Folder Include="Views\MessagesManagement\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

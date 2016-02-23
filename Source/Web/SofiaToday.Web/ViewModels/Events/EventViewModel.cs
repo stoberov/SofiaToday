@@ -4,10 +4,18 @@
     using System.ComponentModel.DataAnnotations;
     using AutoMapper;
     using Data.Models;
+    using Infrastructure;
     using Infrastructure.Mapping;
 
     public class EventViewModel : IMapFrom<Event>, IHaveCustomMappings
     {
+        private readonly ISanitizer sanitizer;
+
+        public EventViewModel()
+        {
+            this.sanitizer = new HtmlSanitizerAdapter();
+        }
+
         public int Id { get; set; }
 
         public string Title { get; set; }
@@ -30,6 +38,8 @@
         public string Category { get; set; }
 
         public string Description { get; set; }
+
+        public string DescriptionSanitized => this.sanitizer.Sanitize(this.Description);
 
         [DataType(DataType.Url)]
         public string OfficialUrl { get; set; }

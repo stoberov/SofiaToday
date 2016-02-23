@@ -11,6 +11,7 @@
 
     using Data;
     using Data.Common;
+    using Infrastructure;
     using Services.Data.Contracts;
     using Services.Web;
 
@@ -54,6 +55,9 @@
                 .InstancePerRequest();
             builder.Register(x => new IdentifierProvider())
                 .As<IIdentifierProvider>()
+                .InstancePerRequest();
+            builder.Register(x => new HtmlSanitizerAdapter())
+                .As<ISanitizer>()
                 .InstancePerRequest();
 
             var servicesAssembly = Assembly.GetAssembly(typeof(IEventsService));

@@ -1,6 +1,7 @@
 ﻿namespace SofiaToday.Web.ViewModels.Messages
 {
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
     using SofiaToday.Data.Models;
     using SofiaToday.Web.Infrastructure.Mapping;
 
@@ -13,6 +14,7 @@
         public string Email { get; set; }
 
         [Required]
+        [AllowHtml]
         public string MessageText { get; set; }
     }
 }

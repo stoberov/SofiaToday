@@ -15,7 +15,7 @@
     <img src="@Model.Article.ImageUrl" class="img-responsive">
     <hr>
     <h3><strong>@Model.Article.Summary</strong></h3>
-    <p class="lead">@Html.Raw(@Model.Article.Content)</p>
+    <p class="lead">@Html.Raw(@Model.Article.ContentSanitized)</p>
     <br>
     <div class="fb-share-button" data-href="@Request.Url" data-type="button_count"></div>
 
@@ -63,7 +63,7 @@
                 <i class="glyphicon glyphicon-comment"></i> @comment.Author says:
                 <small> @comment.CreatedOn</small>
             </h3>
-            <p>@comment.Content</p>
+            <p>@Html.Raw(@comment.ContentSanitized)</p>
             }
         </div>
     </div>

@@ -19,6 +19,7 @@
         public DateTime EndDateTime { get; set; }
 
         [AllowHtml]
+        [Required]
         [UIHint("Description")]
         public string Description { get; set; }
 

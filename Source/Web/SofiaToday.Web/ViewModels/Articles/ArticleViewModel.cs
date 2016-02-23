@@ -5,20 +5,27 @@
     using System.ComponentModel.DataAnnotations;
     using AutoMapper;
     using Data.Models;
+    using Infrastructure;
     using Infrastructure.Mapping;
 
     public class ArticleViewModel : IMapFrom<Article>, IHaveCustomMappings
     {
+        private readonly ISanitizer sanitizer;
+
+        public ArticleViewModel()
+        {
+            this.sanitizer = new HtmlSanitizerAdapter();
+        }
+
         public int Id { get; set; }
 
-        [Required]
         public string Title { get; set; }
 
-        [Required]
         public string Summary { get; set; }
 
-        [Required]
         public string Content { get; set; }
+
+        public string ContentSanitized => this.sanitizer.Sanitize(this.Content);
 
         public string ImageUrl { get; set; }
 
