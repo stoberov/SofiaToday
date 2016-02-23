@@ -1,19 +1,17 @@
-﻿@{ 
+﻿@{
     ViewBag.Title = "Manage Articles";
 }
 
-@(Html.Kendo().Grid<SofiaToday.Web.Areas.Administration.ViewModels.ArticleGridViewModel>()
+<div class="row">
+    @(Html.Kendo().Grid<SofiaToday.Web.Areas.Administration.ViewModels.ArticleGridViewModel>()
       .Name("grid")
       .Columns(columns =>
       {
           columns.Bound(c => c.Title);
           columns.Bound(c => c.Summary);
           columns.Bound(c => c.Author);
+          columns.Bound(c => c.CreatedOn).Format("{0:dd-MM-yyyy HH:mm}");
           columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
-      })
-      .ToolBar(toolbar =>
-      {
-          toolbar.Create();
       })
       .Editable(editable => editable.Mode(GridEditMode.PopUp))
       .Pageable()
@@ -22,13 +20,13 @@
           sortable.SortMode(GridSortMode.SingleColumn);
       })
       .Filterable()
-      .Scrollable(src => src.Height(500))
+      .Scrollable(src => src.Height("auto"))
       .DataSource(dataSource => dataSource
           .Ajax()
           .Model(model => model.Id(p => p.Id))
           .Read(read => read.Action("Articles_Read", "ArticlesManagement"))
-          .Create(create => create.Action("Articles_Create", "ArticlesManagement"))
           .Update(update => update.Action("Articles_Update", "ArticlesManagement"))
           .Destroy(destroy => destroy.Action("Articles_Destroy", "ArticlesManagement"))
       )
-)
+    )
+</div>

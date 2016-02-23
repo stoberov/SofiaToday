@@ -56,6 +56,15 @@
             this.DbSet.Remove(entity);
         }
 
+        public void Delete(int id)
+        {
+            var entity = this.GetById(id);
+            if (entity != null)
+            {
+                this.Delete(entity);
+            }
+        }
+
         public void Save()
         {
             this.Context.SaveChanges();

@@ -217,7 +217,6 @@
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\InformationController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -252,8 +251,8 @@
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
     <Content Include="Areas\Administration\Views\ArticlesManagement\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\CreateNewArticleViewModel.cshtml" />
-    <Content Include="Views\Shared\ArticleInputModel.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ArticleGridViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ArticleInputModel.cshtml" />
     <None Include="Views\Shared\EditorTemplates\EventInputModel.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />

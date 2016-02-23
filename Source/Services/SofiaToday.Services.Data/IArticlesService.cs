@@ -11,6 +11,10 @@
 
         void AddNewArticle(Article newArticle);
 
-        void SaveChanges();
+        void Save();
+
+        void Delete(Article model);
+
+        void Delete(int id);
     }
 }

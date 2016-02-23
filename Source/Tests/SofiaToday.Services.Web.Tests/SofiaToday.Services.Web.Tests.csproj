@@ -32,6 +32,10 @@
     <CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq, Version=4.2.1510.2205, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moq.4.2.1510.2205\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.0.5813.39031, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -46,10 +50,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IdentifierProviderTests.cs" />
+    <Compile Include="EventsServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\SofiaToday.Data.Common\SofiaToday.Data.Common.csproj">
+      <Project>{edfe3c57-ef5b-4636-9ecc-d0baca6b6379}</Project>
+      <Name>SofiaToday.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Data\SofiaToday.Data.Models\SofiaToday.Data.Models.csproj">
+      <Project>{048df115-fad9-4bd4-9ba0-d99dfd32a2b2}</Project>
+      <Name>SofiaToday.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\SofiaToday.Services.Data\SofiaToday.Services.Data.csproj">
+      <Project>{90fe4c4d-122a-406d-8a40-79c561fb8184}</Project>
+      <Name>SofiaToday.Services.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Services\SofiaToday.Services.Web\SofiaToday.Services.Web.csproj">
       <Project>{deab17a2-58c1-448c-8a66-d49c3af7fc6c}</Project>
       <Name>SofiaToday.Services.Web</Name>

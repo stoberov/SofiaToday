@@ -32,8 +32,20 @@
             this.articles.Save();
         }
 
-        public void SaveChanges()
+        public void Save()
         {
+            this.articles.Save();
+        }
+
+        public void Delete(Article model)
+        {
+            this.articles.Delete(model);
+            this.articles.Save();
+        }
+
+        public void Delete(int id)
+        {
+            this.articles.Delete(id);
             this.articles.Save();
         }
     }

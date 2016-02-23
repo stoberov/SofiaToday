@@ -22,6 +22,8 @@
 
         void Delete(T entity);
 
+        void Delete(TKey id);
+
         void HardDelete(T entity);
 
         void Save();
