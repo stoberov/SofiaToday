@@ -21,13 +21,35 @@
         [HttpGet]
         public ActionResult Index()
         {
-            var upcomingEvents = this.events.GetUpcomingEvents().To<EventViewModel>().ToList();
-            var featuredEvents = this.events.GetFeaturedEvents().To<EventViewModel>().ToList();
+            var upcomingEvents =
+                this.Cache.Get(
+                    "upcomingEvents",
+                    () => this.events.GetUpcomingEvents().To<EventViewModel>().ToList(),
+                    30 * 60);
 
-            var dailyEvents = this.events.GetDailyEvents(DateTime.UtcNow);
-            var morningEvents = dailyEvents.Where(x => x.StartDateTime.Hour <= 12).To<EventViewModel>().ToList();
-            var afternoonEvents = dailyEvents.Where(x => x.StartDateTime.Hour > 12 && x.StartDateTime.Hour < 20).To<EventViewModel>().ToList();
-            var eveningEvents = dailyEvents.Where(x => x.StartDateTime.Hour > 20).To<EventViewModel>().ToList();
+            var featuredEvents =
+                this.Cache.Get(
+                    "featuredEvents",
+                    () => this.events.GetFeaturedEvents().To<EventViewModel>().ToList(),
+                    30 * 60);
+
+            var morningEvents =
+                this.Cache.Get(
+                    "morningEvents",
+                    () => this.events.GetDailyEvents(DateTime.UtcNow).Where(x => x.StartDateTime.Hour <= 12).To<EventViewModel>().ToList(),
+                    30 * 60);
+
+            var afternoonEvents =
+                this.Cache.Get(
+                    "afternoonEvents",
+                    () => this.events.GetDailyEvents(DateTime.UtcNow).Where(x => x.StartDateTime.Hour > 12 && x.StartDateTime.Hour < 20).To<EventViewModel>().ToList(),
+                    30 * 60);
+
+            var eveningEvents =
+                this.Cache.Get(
+                    "eveningEvents",
+                    () => this.events.GetDailyEvents(DateTime.UtcNow).Where(x => x.StartDateTime.Hour > 20).To<EventViewModel>().ToList(),
+                    30 * 60);
 
             var viewModel = new IndexViewModel
             {
