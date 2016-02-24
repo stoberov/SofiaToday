@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2E4F27
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SofiaToday.Common", "Common\SofiaToday.Common\SofiaToday.Common.csproj", "{AACD30B4-8E0A-4296-8D8B-E40DBE59E944}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SofiaToday.Services.Data.Tests", "Tests\SofiaToday.Services.Data.Tests\SofiaToday.Services.Data.Tests.csproj", "{B983AC15-B28E-4A74-ACD6-3628E4EB0BA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{AACD30B4-8E0A-4296-8D8B-E40DBE59E944}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AACD30B4-8E0A-4296-8D8B-E40DBE59E944}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AACD30B4-8E0A-4296-8D8B-E40DBE59E944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B983AC15-B28E-4A74-ACD6-3628E4EB0BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B983AC15-B28E-4A74-ACD6-3628E4EB0BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B983AC15-B28E-4A74-ACD6-3628E4EB0BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B983AC15-B28E-4A74-ACD6-3628E4EB0BA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,5 +107,6 @@ Global
 		{C3A300EF-D136-4334-9211-466B9E699339} = {0C12FAF3-85BC-43E1-ABB2-6799213942CB}
 		{7C55353F-CB74-4E8E-B272-42DA1C9C2194} = {0C12FAF3-85BC-43E1-ABB2-6799213942CB}
 		{AACD30B4-8E0A-4296-8D8B-E40DBE59E944} = {2E4F270D-0E8E-4785-852D-4B061E0EBB78}
+		{B983AC15-B28E-4A74-ACD6-3628E4EB0BA2} = {0C12FAF3-85BC-43E1-ABB2-6799213942CB}
 	EndGlobalSection
 EndGlobal

@@ -1,12 +1,13 @@
-﻿namespace SofiaToday.Services.Web.Tests
-{
-    using System.Collections.Generic;
-    using System.Linq;
-    using Data.Contracts;
-    using Moq;
-    using NUnit.Framework;
-    using SofiaToday.Data.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Moq;
+using NUnit.Framework;
+using SofiaToday.Data.Models;
+using SofiaToday.Services.Data.Contracts;
 
+namespace SofiaToday.Services.Data.Tests
+{
     [TestFixture]
     public class EventsServiceTests
     {
@@ -30,6 +31,10 @@
             mockedEventsData
                 .Setup(s => s.AddNewEvent(It.IsAny<Event>()))
                 .Verifiable();
+
+            mockedEventsData
+                .Setup(s => s.Delete(It.IsAny<Event>()))
+                .Verifiable();
         }
 
         [Test]
@@ -51,6 +56,13 @@
         {
             mockedEventsData.Object.AddNewEvent(new Event());
             mockedEventsData.Verify(s => s.AddNewEvent(It.IsAny<Event>()));
+        }
+
+        [Test]
+        public void DeleteEventShouldBeCalled()
+        {
+            mockedEventsData.Object.Delete(new Event());
+            mockedEventsData.Verify(s => s.Delete(It.IsAny<Event>()));
         }
     }
 }
