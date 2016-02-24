@@ -7,33 +7,33 @@
     using SofiaToday.Web.Controllers;
 
     [TestFixture]
-    public class EventsRouteTests
+    public class ArticleRouteTests
     {
         [Test]
-        public void EventsDetailsRouteById()
+        public void ArticleDetailsRouteById()
         {
-            const string Url = "/Events/Details/1";
+            const string Url = "/Articles/Details/1";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<EventsController>(c => c.Details(1));
+            routeCollection.ShouldMap(Url).To<ArticlesController>(c => c.Details(1));
         }
 
         [Test]
         public void TestRouteByAction()
         {
-            const string Url = "/Events/Create";
+            const string Url = "/Articles/Create";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<EventsController>(c => c.Create());
+            routeCollection.ShouldMap(Url).To<ArticlesController>(c => c.Create());
         }
 
         [Test]
         public void TestRouteByActionAndId()
         {
-            const string Url = "/Events?page=2";
+            const string Url = "/Articles?page=2";
             var routeCollection = new RouteCollection();
             RouteConfig.RegisterRoutes(routeCollection);
-            routeCollection.ShouldMap(Url).To<EventsController>(c => c.Index(2));
+            routeCollection.ShouldMap(Url).To<ArticlesController>(c => c.Index(2));
         }
     }
 }

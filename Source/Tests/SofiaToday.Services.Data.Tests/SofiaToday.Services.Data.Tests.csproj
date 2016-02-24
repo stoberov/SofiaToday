@@ -58,6 +58,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="MessagesService.cs" />
     <Compile Include="ArticlesServiceTests.cs" />
     <Compile Include="EventsServiceTests.cs" />
     <Compile Include="CommentsServiceTests.cs" />
