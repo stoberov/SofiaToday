@@ -260,6 +260,7 @@
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Areas\Administration\Views\MessagesManagement\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <None Include="Properties\PublishProfiles\SofiaToday - Web Deploy.pubxml" />
     <None Include="Views\Shared\EditorTemplates\EventInputModel.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />

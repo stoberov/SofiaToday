@@ -122,8 +122,8 @@ Party!In addition to the event we are planning a great party and other surprises
                     Description = @"Серията ""тройни"" лайв формати на club *MIXTAPE 5* продължава с пълна сила, този път с участието на Mihaela Fileva, Preyah и Дивна.
 След безупречния успех на предишните ""ladies"" събития сме жадни да чуем още три успешни и талантливи изпълнителки.Този път те са част от лейбъла Monte Music Ltd.и ще излязат за първи път заедно на сцената в голямата зала на ""Mixtape 5"" на 26 февруари 2016 г.",
                     Location = "Mixtape 5",
-                    StartDateTime = DateTime.Now.AddDays(2).AddHours(1),
-                    EndDateTime = DateTime.Now.AddDays(2).AddHours(3),
+                    StartDateTime = DateTime.Now.AddHours(10),
+                    EndDateTime = DateTime.Now.AddHours(12),
                     Category = CategoryType.Nightlife,
                     Price = 10,
                     IsFeatured = true,
@@ -135,15 +135,26 @@ Party!In addition to the event we are planning a great party and other surprises
                     Title = "Премиера , Официално! Под прикритие - Сезон 5",
                     Description = @"The new season starts now!",
                     Location = "BNT 1",
-                    StartDateTime = DateTime.Now.AddDays(15).AddHours(12),
-                    EndDateTime = DateTime.Now.AddDays(15).AddHours(16),
+                    StartDateTime = DateTime.Now.AddDays(1).AddHours(12),
+                    EndDateTime = DateTime.Now.AddDays(1).AddHours(16),
                     Category = CategoryType.Cinema,
                     Price = 0,
                     IsFeatured = true,
                     ImageUrl = "http://www.chudesa.net/wp-content/uploads/2013/02/pod_prikritie.jpg"
                 });
 
-                context.SaveChanges();
+                context.Events.Add(new Event
+                {
+                    Title = "Курс Бази Данни и SQL",
+                    Description = @"Master the database!",
+                    Location = "Сватбен Мол",
+                    StartDateTime = DateTime.Now.AddDays(2).AddHours(12),
+                    EndDateTime = DateTime.Now.AddDays(2).AddHours(16),
+                    Category = CategoryType.Misc,
+                    Price = 0,
+                    IsFeatured = false,
+                    ImageUrl = "http://academy.telerik.com/images/default-source/default-album/telerik-academy-inaugurationEEF3FAF1E8E1.jpg?sfvrsn=2"
+                });
             }
         }
 
