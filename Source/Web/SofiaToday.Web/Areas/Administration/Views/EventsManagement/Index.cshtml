@@ -2,7 +2,7 @@
     ViewBag.Title = "Manage Events";
 }
 
-@(Html.Kendo().Grid<SofiaToday.Web.Areas.Administration.ViewModels.EventInputModel>()
+@(Html.Kendo().Grid<SofiaToday.Web.Areas.Administration.ViewModels.EventViewModel>()
       .Name("grid")
       .Columns(columns =>
       {
@@ -12,10 +12,6 @@
           columns.Bound(c => c.Price);
           columns.Bound(c => c.IsFeatured);
           columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
-      })
-      .ToolBar(toolbar =>
-      {
-          toolbar.Create();
       })
       .ColumnMenu()
       .Editable(editable => editable.Mode(GridEditMode.PopUp))

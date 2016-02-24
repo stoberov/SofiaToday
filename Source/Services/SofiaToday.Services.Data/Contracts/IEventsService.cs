@@ -26,5 +26,7 @@
         void AddNewEvent(Event newEvent);
 
         void SaveChanges();
+
+        void Delete(Event model);
     }
 }

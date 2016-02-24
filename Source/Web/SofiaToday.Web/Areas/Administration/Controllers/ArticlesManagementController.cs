@@ -56,7 +56,9 @@
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Articles_Destroy([DataSourceRequest]DataSourceRequest request, Article article)
         {
-            this.articles.Delete(article.Id);
+            var articleToDelete = articles.GetArticleById(article.Id);
+
+            this.articles.Delete(articleToDelete);
 
             return this.Json(new[] { article }.ToDataSourceResult(request, this.ModelState));
         }

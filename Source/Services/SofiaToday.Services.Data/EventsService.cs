@@ -72,5 +72,11 @@
             x.StartDateTime.Month == month &&
             x.StartDateTime.Year == year);
         }
+
+        public void Delete(Event model)
+        {
+            this.events.Delete(model);
+            this.events.Save();
+        }
     }
 }
