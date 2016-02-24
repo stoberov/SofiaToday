@@ -62,5 +62,10 @@
 
             return this.View(viewModel);
         }
+
+        public ActionResult About()
+        {
+            return this.View();
+        }
     }
 }

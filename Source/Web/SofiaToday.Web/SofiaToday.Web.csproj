@@ -258,6 +258,7 @@
     <Content Include="Views\Shared\EditorTemplates\ArticleInputModel.cshtml" />
     <Content Include="Views\Messages\Index.cshtml" />
     <Content Include="Areas\Administration\Views\MessagesManagement\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
     <None Include="Views\Shared\EditorTemplates\EventInputModel.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
