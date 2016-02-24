@@ -99,8 +99,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticleRouteTests.cs" />
     <Compile Include="MessagesRouteTests.cs" />
-    <Compile Include="ArticlesRouteTests.cs" />
     <Compile Include="EventsRouteTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

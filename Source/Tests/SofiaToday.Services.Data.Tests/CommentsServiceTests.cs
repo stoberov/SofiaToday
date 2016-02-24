@@ -32,7 +32,7 @@
         [Test]
         public void GetArticleCommentsShouldNotReturnNull()
         {
-            IQueryable<Comment> comments = mockedCommentsData.Object.GetArticleComments(1);
+            var comments = mockedCommentsData.Object.GetArticleComments(1);
             Assert.AreNotEqual(null, comments);
         }
 

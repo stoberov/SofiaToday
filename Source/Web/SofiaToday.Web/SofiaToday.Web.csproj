@@ -253,6 +253,7 @@
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Messages\CreateMessageInputModel.cs" />
+    <Content Include="404.html" />
     <Content Include="Areas\Administration\Views\ArticlesManagement\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\ArticleGridViewModel.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\ArticleInputModel.cshtml" />

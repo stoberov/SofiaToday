@@ -108,8 +108,8 @@ Community: A balanced mixture of participants and speakers working in programmin
                     colleagues or ideas to develop.
 Party!In addition to the event we are planning a great party and other surprises for you.You should treat yourselves to an amazing weekend in Sofia!",
                     Location = "Inter Expo Center",
-                    StartDateTime = DateTime.Now.AddDays(20).AddHours(2),
-                    EndDateTime = DateTime.Now.AddDays(20).AddHours(6),
+                    StartDateTime = DateTime.Now.AddHours(2),
+                    EndDateTime = DateTime.Now.AddHours(6),
                     Category = CategoryType.Misc,
                     Price = 0,
                     IsFeatured = true,

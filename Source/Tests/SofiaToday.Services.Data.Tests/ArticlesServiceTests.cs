@@ -39,14 +39,14 @@
         [Test]
         public void GetAllArticlesShouldNotReturnNull()
         {
-            IQueryable<Article> articles = mockedArticlesData.Object.GetAll();
+            var articles = mockedArticlesData.Object.GetAll();
             Assert.AreNotEqual(null, articles);
         }
 
         [Test]
         public void GetByIdArticleIdShouldNotReturnNull()
         {
-            Article singleArticle = mockedArticlesData.Object.GetArticleById(1);
+            var singleArticle = mockedArticlesData.Object.GetArticleById(1);
             Assert.AreEqual(1, singleArticle.Id);
         }
 

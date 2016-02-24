@@ -22,12 +22,12 @@
 
         public ActionResult Index()
         {
-            return View();
+            return this.View();
         }
 
         public ActionResult Events_Read([DataSourceRequest]DataSourceRequest request)
         {
-            DataSourceResult result = this.events.GetAll()
+            var result = this.events.GetAll()
                 .To<EventViewModel>()
                 .ToDataSourceResult(request);
 
@@ -58,7 +58,7 @@
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Events_Destroy([DataSourceRequest]DataSourceRequest request, Event deletedEvent)
         {
-            var articleToDelete = events.GetEventById(deletedEvent.Id);
+            var articleToDelete = this.events.GetEventById(deletedEvent.Id);
             this.events.Delete(articleToDelete);
 
             return this.Json(new[] { deletedEvent }.ToDataSourceResult(request, this.ModelState));

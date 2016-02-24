@@ -25,7 +25,7 @@
 
         public ActionResult Articles_Read([DataSourceRequest]DataSourceRequest request)
         {
-            DataSourceResult result = this.articles.GetAll()
+            var result = this.articles.GetAll()
                 .To<ArticleGridViewModel>()
                 .ToDataSourceResult(request);
 
@@ -56,7 +56,7 @@
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Articles_Destroy([DataSourceRequest]DataSourceRequest request, Article article)
         {
-            var articleToDelete = articles.GetArticleById(article.Id);
+            var articleToDelete = this.articles.GetArticleById(article.Id);
 
             this.articles.Delete(articleToDelete);
 
